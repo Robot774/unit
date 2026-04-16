@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>UniT: Unified Physical Language for Human-to-Humanoid Transfer</title>
+  <title>UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
@@ -288,8 +288,8 @@
       <a href="#problem">Motivation</a>
       <a href="#method">Method</a>
       <a href="#unified-space">Unified Space</a>
-      <a href="#policy">Policy</a>
-      <a href="#world-model">World Model</a>
+      <a href="#policy">Policy Learning</a>
+      <a href="#world-model">World Modeling</a>
       <a href="#ablation">Ablation</a>
       <a href="#noise-robustness">Robustness</a>
     </div>
@@ -301,8 +301,8 @@
   <div class="container-wide">
     <div class="section-label">Under Review</div>
     <h1 class="hero-title">
-      UniT: A Unified Physical Language for<br>
-      Human-to-Humanoid Transfer
+      UniT: Toward a Unified Physical Language for<br>
+      Human-to-Humanoid Policy Learning and World Modeling
     </h1>
     <p class="hero-sub">
       Scaling humanoid foundation models is bottlenecked by scarce robotic data.<br>
@@ -435,7 +435,7 @@
     <h2 class="section-title">Visual Anchoring via Cross-Reconstruction</h2>
     <p class="section-subtitle">UniT functions as a cross-modal information bottleneck: it concurrently extracts temporal-visual, kinematic, and fused visuo-motor features, and enforces rigorous cross-reconstruction to distill the embodiment-agnostic physical intent.</p>
     <figure class="method-figure">
-      <video src="method.mp4?v=1776341418" autoplay loop muted playsinline style="width: 100%; display: block;"></video>
+      <video data-src="method.mp4?v=1776341418" loop muted playsinline style="width: 100%; display: block;"></video>
       <figcaption><strong>Architecture of UniT.</strong> Cross-embodiment vision pairs (O<sub>t</sub>, O<sub>t+k</sub>) and action chunks A<sub>t:t+k</sub> are encoded into vision, action, and fused features via tri-branch encoders. A shared RQ-VAE codebook quantizes all three branches into a unified discrete space. Both vision and action decoders reconstruct from these shared tokens, enforcing cross-reconstruction alignment.</figcaption>
     </figure>
     <div class="method-steps">
@@ -445,11 +445,11 @@
     </div>
     <div style="display: grid; grid-template-columns: 1.093fr 1fr; gap: 24px; margin-top: 36px;">
       <figure class="method-figure" style="margin: 0;">
-        <img src="method_vla.png" alt="VLA-UniT" style="width: 100%; display: block;">
+        <img src="method_vla.jpeg" alt="VLA-UniT" style="width: 100%; display: block;">
         <figcaption><strong>(a) VLA-UniT.</strong> Rather than direct action regression, the VLM predicts Unified Latent Action tokens in the shared space via cross-entropy. A lightweight flow-matching action expert generates embodiment-specific controls from the same vision-language context.</figcaption>
       </figure>
       <figure class="method-figure" style="margin: 0;">
-        <img src="method_wm.png" alt="WM-UniT" style="width: 100%; display: block;">
+        <img src="method_wm.jpeg" alt="WM-UniT" style="width: 100%; display: block;">
         <figcaption><strong>(b) WM-UniT.</strong> Continuous pre-quantization features from the UniT action branch are projected and injected via cross-attention, providing embodiment-agnostic action conditions for autoregressive video generation.</figcaption>
       </figure>
     </div>
@@ -545,21 +545,21 @@
           <div class="video-grid">
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/web/articulated_cup_drawer.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/web/articulated_cup_drawer.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick up the cup, place it into the drawer and close the drawer</div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/web/articulated_milk_microwave.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/web/articulated_milk_microwave.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick up the milk, place it into the microwave and close the microwave</div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/web/articulated_wine_cabinet.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/web/articulated_wine_cabinet.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick up the wine, place it into the cabinet and close the cabinet</div>
@@ -570,21 +570,21 @@
           <div class="video-grid">
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/web/pnp_bellpepper_shelf.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/web/pnp_bellpepper_shelf.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the bell pepper from the tray and place it in the tiered shelf</div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/web/pnp_can_box.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/web/pnp_can_box.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the can from the plate and place it in the cardboard box</div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/web/pnp_cupcake_basket.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/web/pnp_cupcake_basket.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the cupcake from the cutting board and place it in the tiered basket</div>
@@ -611,14 +611,14 @@
           <div class="video-grid" style="grid-template-columns: repeat(2, 1fr);">
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/ood/web/ood-1-1.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/ood/web/ood-1-1.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">bell pepper</strong> from the cutting board and place it in the basket <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* bell pepper appears with unseen texture and color variant</span></div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/ood/web/ood-1-2.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/ood/web/ood-1-2.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">croissant</strong> from the cutting board and place it in the cardboard box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* croissant appears with unseen visual appearance</span></div>
@@ -629,14 +629,14 @@
           <div class="video-grid" style="grid-template-columns: repeat(2, 1fr);">
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/ood/web/ood-2-1.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/ood/web/ood-2-1.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick up the <strong style="color:var(--blue);">wine</strong>, place it into the <strong style="color:var(--blue);">drawer</strong> and close the drawer <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* wine &times; drawer pairing never seen during training</span></div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/ood/web/ood-2-2.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/ood/web/ood-2-2.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">sweet potato</strong> from the placemat and place it in the <strong style="color:var(--blue);">pot</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* sweet potato &times; pot pairing never seen during training</span></div>
@@ -647,14 +647,14 @@
           <div class="video-grid" style="grid-template-columns: repeat(2, 1fr);">
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/ood/web/ood-3-1.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/ood/web/ood-3-1.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">rubix cube</strong> from the placemat and place it in the pan <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* rubix cube is an entirely unseen object category</span></div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
-                <video src="movies/robocasa/ood/web/ood-3-2.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/robocasa/ood/web/ood-3-2.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
               <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">fish</strong> from the placemat and place it in the pot <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* fish is an entirely unseen object category</span></div>
@@ -684,14 +684,14 @@
             <div class="video-grid" style="grid-template-columns: repeat(2, 1fr);">
               <div class="video-card real-video-card">
                 <div class="video-card-inner">
-                  <video src="movies/real/id/banana.mp4" autoplay muted loop playsinline></video>
+                  <video data-src="movies/real/id/banana.mp4" muted loop playsinline></video>
                   <div class="video-speed-badge">Autonomous 2.0x</div>
                 </div>
                 <div class="video-card-instruction">Put the banana in the box</div>
               </div>
               <div class="video-card real-video-card">
                 <div class="video-card-inner">
-                  <video src="movies/real/id/bowl.mp4" autoplay muted loop playsinline></video>
+                  <video data-src="movies/real/id/bowl.mp4" muted loop playsinline></video>
                   <div class="video-speed-badge">Autonomous 2.0x</div>
                 </div>
                 <div class="video-card-instruction">Put the bowl in the box</div>
@@ -702,21 +702,21 @@
             <div class="video-grid">
               <div class="video-card real-video-card">
                 <div class="video-card-inner">
-                  <video src="movies/real/id/pour-1.mp4" autoplay muted loop playsinline></video>
+                  <video data-src="movies/real/id/pour-1.mp4" muted loop playsinline></video>
                   <div class="video-speed-badge">Autonomous 2.0x</div>
                 </div>
                 <div class="video-card-instruction">Pour contents from the bottle into the cup</div>
               </div>
               <div class="video-card real-video-card">
                 <div class="video-card-inner">
-                  <video src="movies/real/id/pour-2.mp4" autoplay muted loop playsinline></video>
+                  <video data-src="movies/real/id/pour-2.mp4" muted loop playsinline></video>
                   <div class="video-speed-badge">Autonomous 2.0x</div>
                 </div>
                 <div class="video-card-instruction">Pour contents from the bottle into the cup</div>
               </div>
               <div class="video-card real-video-card">
                 <div class="video-card-inner">
-                  <video src="movies/real/id/pour-3.mp4" autoplay muted loop playsinline></video>
+                  <video data-src="movies/real/id/pour-3.mp4" muted loop playsinline></video>
                   <div class="video-speed-badge">Autonomous 2.0x</div>
                 </div>
                 <div class="video-card-instruction">Pour contents from the bottle into the cup</div>
@@ -747,11 +747,11 @@
                     <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
                     <div class="col-desc">Limited, fixed object set</div>
                     <div class="video-card robot-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-banana.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card robot-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-bowl-1.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -759,11 +759,11 @@
                     <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
                     <div class="col-desc">Diverse objects with varied geometries</div>
                     <div class="video-card human-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-geo.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-banana-geo.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Pick and place the <strong style="color:var(--blue);">bread</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied geometry, similar grasp</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card human-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-geo.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-bowl-geo.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Pick and place the <strong style="color:var(--blue);">cup</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied geometry, similar grasp</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -776,11 +776,11 @@
                   <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Geometry</div>
                   <div class="col-desc">&nbsp;</div>
                   <div class="video-card real-video-card">
-                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood3.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/banana-ood3.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                     <div class="video-card-instruction">Put the <strong style="color:var(--blue);">bread</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen geometry; grasp pattern from human data</span></div>
                   </div>
                   <div class="video-card real-video-card" style="margin-top: 12px;">
-                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood3.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/bowl-ood3.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                     <div class="video-card-instruction">Put the <strong style="color:var(--blue);">cup</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen geometry; grasp pattern from human data</span></div>
                   </div>
                 </div>
@@ -798,11 +798,11 @@
                     <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
                     <div class="col-desc">Limited, single-object scenes</div>
                     <div class="video-card robot-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-banana.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card robot-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-bowl-1.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -810,11 +810,11 @@
                     <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
                     <div class="col-desc">Diverse, cluttered multi-object scenes</div>
                     <div class="video-card human-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-dis.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-banana-dis.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Pick and place the banana <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied surrounding <strong style="color:var(--blue);font-style:normal;">distractors</strong></span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card human-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-dis.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-bowl-dis.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Pick and place the bowl <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied surrounding <strong style="color:var(--blue);font-style:normal;">distractors</strong></span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -827,11 +827,11 @@
                   <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Distractor</div>
                   <div class="col-desc">&nbsp;</div>
                   <div class="video-card real-video-card">
-                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood1.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/banana-ood1.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                     <div class="video-card-instruction">Pick and place the banana <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">distractors</strong>; absent in robot data</span></div>
                   </div>
                   <div class="video-card real-video-card" style="margin-top: 12px;">
-                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood1.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/bowl-ood1.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                     <div class="video-card-instruction">Pick and place the bowl <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">distractors</strong>; absent in robot data</span></div>
                   </div>
                 </div>
@@ -849,11 +849,11 @@
                     <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
                     <div class="col-desc">Limited, fixed target (box only)</div>
                     <div class="video-card robot-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-banana.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card robot-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-bowl-1.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -861,11 +861,11 @@
                     <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
                     <div class="col-desc">Diverse target receptacles</div>
                     <div class="video-card human-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-target.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-banana-target.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Place the object in the <strong style="color:var(--blue);">blue bowl</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">target</strong> receptacle</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card human-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-target.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-bowl-target.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Place the object on the <strong style="color:var(--blue);">red plate</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">target</strong> receptacle</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -878,12 +878,12 @@
                   <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Target</div>
                   <div class="col-desc">&nbsp;</div>
                   <div class="video-card real-video-card">
-                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood2.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Place the object in the <strong style="color:var(--blue);">blue bowl</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">target</strong>; only box in robot data</span></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/banana-ood2.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Put the banana in the <strong style="color:var(--blue);">blue bowl</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">target</strong>; only box in robot data</span></div>
                   </div>
                   <div class="video-card real-video-card" style="margin-top: 12px;">
-                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood2.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Place the object on the <strong style="color:var(--blue);">red plate</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">target</strong>; only box in robot data</span></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/bowl-ood2.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Put the bowl on the <strong style="color:var(--blue);">red plate</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">target</strong>; only box in robot data</span></div>
                   </div>
                 </div>
               </div>
@@ -900,11 +900,11 @@
                     <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
                     <div class="col-desc">Limited, single-scene collection</div>
                     <div class="video-card robot-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-banana.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card robot-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-bowl-1.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -912,11 +912,11 @@
                     <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
                     <div class="col-desc">Diverse scenes and backdrops</div>
                     <div class="video-card human-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-back.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-banana-back.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Pick up the banana <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">backdrop</strong> setting</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card human-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-back.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-inner"><video data-src="movies/real/human_demo/human-bowl-back.mp4" muted loop playsinline></video></div>
                       <div class="video-card-instruction">Pick up the bowl <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">backdrop</strong> setting</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
@@ -929,11 +929,11 @@
                   <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Background</div>
                   <div class="col-desc">&nbsp;</div>
                   <div class="video-card real-video-card">
-                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood4.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/banana-ood4.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                     <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">backdrop</strong>; single scene in robot data</span></div>
                   </div>
                   <div class="video-card real-video-card" style="margin-top: 12px;">
-                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood4.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-inner"><video data-src="movies/real/ood/bowl-ood4.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                     <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">backdrop</strong>; single scene in robot data</span></div>
                   </div>
                 </div>
@@ -950,7 +950,7 @@
                   <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
                   <div class="col-desc">Limited, fixed object &times; scene</div>
                   <div class="video-card robot-demo-card">
-                    <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
+                    <div class="video-card-inner"><video data-src="movies/real/robot_demo/robot-bowl-1.mp4" muted loop playsinline></video></div>
                     <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span></div>
                   </div>
                 </div>
@@ -963,7 +963,7 @@
                     <div class="col-label"><span class="step-num step-num--result">2</span>Unseen Setting</div>
                     <div class="col-desc">&nbsp;</div>
                     <div class="video-card real-video-card">
-                      <div class="video-card-inner"><video src="movies/real/ood/comb-1.mov" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                      <div class="video-card-inner"><video data-src="movies/real/ood/comb-1.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                       <div class="video-card-instruction">Put the <strong style="color:var(--blue);">cup</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen object &times; scene combination</span></div>
                     </div>
                   </div>
@@ -971,7 +971,7 @@
                     <div class="col-label"><span class="step-num step-num--result">3</span>Unseen Setting</div>
                     <div class="col-desc">&nbsp;</div>
                     <div class="video-card real-video-card">
-                      <div class="video-card-inner"><video src="movies/real/ood/comb-2.mov" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                      <div class="video-card-inner"><video data-src="movies/real/ood/comb-2.mp4" muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
                       <div class="video-card-instruction">Put the <strong style="color:var(--blue);">bowl</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen object &times; scene combination</span></div>
                     </div>
                   </div>
@@ -995,7 +995,7 @@
           <div style="font-size: 12px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Human Demonstration</div>
           <div class="video-card" style="display: inline-block; border-color: rgba(91,141,201,0.15); background: rgba(91,141,201,0.03);">
             <div class="video-card-inner">
-              <video src="movies/real/zero-shot/human_stack_web.mp4" autoplay muted loop playsinline style="width: auto; height: 260px; aspect-ratio: auto; object-fit: contain;"></video>
+              <video data-src="movies/real/zero-shot/human_stack_web.mp4" muted loop playsinline style="width: auto; height: 260px; aspect-ratio: auto; object-fit: contain;"></video>
             </div>
             <div class="video-card-instruction" style="background: rgba(91,141,201,0.06);">Stack the <strong style="color:var(--blue);">green bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
           </div>
@@ -1008,7 +1008,7 @@
           <div style="font-size: 12px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Robot Zero-Shot Execution</div>
           <div class="video-card" style="display: inline-block; border-color: rgba(196,144,0,0.15); background: rgba(245,215,110,0.04);">
             <div class="video-card-inner">
-              <video src="movies/real/zero-shot/robot_stack_web.mp4" autoplay muted loop playsinline style="width: auto; height: 260px; aspect-ratio: auto; object-fit: contain;"></video>
+              <video data-src="movies/real/zero-shot/robot_stack_web.mp4" muted loop playsinline style="width: auto; height: 260px; aspect-ratio: auto; object-fit: contain;"></video>
               <div class="video-speed-badge">Autonomous 4x</div>
             </div>
             <div class="video-card-instruction" style="background: rgba(245,215,110,0.06);">Stack the <strong style="color:var(--blue);">blue bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
@@ -1054,7 +1054,7 @@
         <div class="tab-panel active" data-tabgroup="droid-cases" data-tab="droid-case1">
           <div class="video-card droid-wide-card">
             <div class="video-card-inner">
-              <video src="movies/droid/Droid-eg-1-1.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/droid/Droid-eg-1-1.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10x Rollout</div>
             </div>
           </div>
@@ -1062,7 +1062,7 @@
         <div class="tab-panel" data-tabgroup="droid-cases" data-tab="droid-case2">
           <div class="video-card droid-wide-card">
             <div class="video-card-inner">
-              <video src="movies/droid/droid-eg-3-1.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/droid/droid-eg-3-1.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10x Rollout</div>
             </div>
           </div>
@@ -1070,7 +1070,7 @@
         <div class="tab-panel" data-tabgroup="droid-cases" data-tab="droid-case3">
           <div class="video-card droid-wide-card">
             <div class="video-card-inner">
-              <video src="movies/droid/Droid-eg-2-1.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/droid/Droid-eg-2-1.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10x Rollout</div>
             </div>
           </div>
@@ -1078,7 +1078,7 @@
         <div class="tab-panel" data-tabgroup="droid-cases" data-tab="droid-case4">
           <div class="video-card droid-wide-card">
             <div class="video-card-inner">
-              <video src="movies/droid/droid-eg-4-1.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/droid/droid-eg-4-1.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10x Rollout</div>
             </div>
           </div>
@@ -1114,14 +1114,14 @@
           <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/human/sample_0002_traj428_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/human/sample_0002_traj428_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">5-Step Rollout</div>
             </div>
           </div>
           <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/robot/sample_0000_traj0_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/robot/sample_0000_traj0_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
@@ -1130,14 +1130,14 @@
           <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/human/sample_0006_traj1284_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/human/sample_0006_traj1284_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">4-Step Rollout</div>
             </div>
           </div>
           <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/robot/sample_0019_traj545_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/robot/sample_0019_traj545_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
@@ -1146,14 +1146,14 @@
           <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/human/sample_0028_traj5992_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/human/sample_0028_traj5992_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
           <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/robot/sample_0040_traj470_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/robot/sample_0040_traj470_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
@@ -1162,14 +1162,14 @@
           <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/human/sample_0023_traj4922_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/human/sample_0023_traj4922_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
           <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp1/robot/sample_0059_traj25_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp1/robot/sample_0059_traj25_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">7-Step Rollout</div>
             </div>
           </div>
@@ -1203,7 +1203,7 @@
         <div class="tab-panel active" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case1">
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp2/sample_0015_traj105_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp2/sample_0015_traj105_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
@@ -1211,7 +1211,7 @@
         <div class="tab-panel" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case2">
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp2/sample_0019_traj661_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp2/sample_0019_traj661_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
@@ -1219,7 +1219,7 @@
         <div class="tab-panel" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case3">
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp2/sample_0028_traj922_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp2/sample_0028_traj922_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">9-Step Rollout</div>
             </div>
           </div>
@@ -1227,7 +1227,7 @@
         <div class="tab-panel" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case4">
           <div class="video-card wm-cotrain-wide-card">
             <div class="video-card-inner">
-              <video src="movies/wm/exp2/sample_0033_traj627_merged.mp4" autoplay muted loop playsinline></video>
+              <video data-src="movies/wm/exp2/sample_0033_traj627_merged.mp4" muted loop playsinline></video>
               <div class="video-speed-badge">10-Step Rollout</div>
             </div>
           </div>
@@ -1268,7 +1268,7 @@
           <div class="tab-panel active" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case1">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/human2robot/pair_054_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/human2robot/pair_054_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1276,7 +1276,7 @@
           <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case2">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/human2robot/pair_073_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/human2robot/pair_073_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1284,7 +1284,7 @@
           <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case3">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/human2robot/pair_082_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/human2robot/pair_082_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1292,7 +1292,7 @@
           <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case4">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/human2robot/pair_091_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/human2robot/pair_091_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1309,7 +1309,7 @@
           <div class="tab-panel active" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case1">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/robot2human/pair_093_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/robot2human/pair_093_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1317,7 +1317,7 @@
           <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case2">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/robot2human/pair_098_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/robot2human/pair_098_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1325,7 +1325,7 @@
           <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case3">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/robot2human/pair_108_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/robot2human/pair_108_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1333,7 +1333,7 @@
           <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case4">
             <div class="video-card wm-cotrain-wide-card">
               <div class="video-card-inner">
-                <video src="movies/wm/exp3/robot2human/pair_121_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <video data-src="movies/wm/exp3/robot2human/pair_121_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
                 <div class="video-speed-badge">5-Step Rollout</div>
               </div>
             </div>
@@ -1477,8 +1477,11 @@ function initTabs() {
         const target = document.querySelector(`.tab-panel[data-tabgroup="${group}"][data-tab="${btn.dataset.tab}"]`);
         if (target) {
           target.classList.add('active');
-          /* play videos that became visible */
-          target.querySelectorAll('video').forEach(v => { try { v.play(); } catch(e){} });
+          /* load & play videos that became visible */
+          target.querySelectorAll('video').forEach(v => {
+            if (v.dataset.src) { v.src = v.dataset.src; v.removeAttribute('data-src'); v.load(); }
+            try { v.play(); } catch(e){}
+          });
           setTimeout(() => {
             /* reposition any child tab-bar sliders that were hidden at init */
             target.querySelectorAll('.tab-bar').forEach(childBar => positionTabSlider(childBar));
@@ -2413,6 +2416,30 @@ window.addEventListener('scroll', () => {
   syncPair('wm-hero-human', 'wm-hero-robot');
 })();
 
+/* ── Lazy-load videos when section nears viewport ── */
+(() => {
+  function loadVideos(container) {
+    container.querySelectorAll('video[data-src]').forEach(v => {
+      v.src = v.dataset.src;
+      v.removeAttribute('data-src');
+      v.load();
+      /* only auto-play if visible (active tab) */
+      if (v.offsetParent !== null) v.play().catch(() => {});
+    });
+  }
+  const sections = document.querySelectorAll('section');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        loadVideos(entry.target);
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { rootMargin: '300px' });
+  sections.forEach(s => {
+    if (s.querySelector('video[data-src]')) observer.observe(s);
+  });
+})();
 
 </script>
 
