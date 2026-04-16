@@ -30,7 +30,7 @@
     body {
       font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
       color: var(--text); background: var(--bg);
-      line-height: 1.75; font-size: 16px;
+      line-height: 1.625; font-size: 16px;
       -webkit-font-smoothing: antialiased; letter-spacing: -0.01em;
     }
 
@@ -48,12 +48,14 @@
     .container-wide { max-width: var(--max-w-wide); margin: 0 auto; }
     .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 12px; }
     .section-title { font-size: 28px; font-weight: 700; line-height: 1.25; letter-spacing: -0.5px; margin-bottom: 16px; }
-    .section-subtitle { font-size: 16px; color: var(--text-muted); line-height: 1.75; max-width: 640px; }
+    .section-subtitle { font-size: 16px; color: var(--text-muted); line-height: 1.625; max-width: 640px; }
 
     /* Hero */
     .hero { padding: 80px 24px 48px; text-align: center; }
     .hero-title { font-size: 42px; font-weight: 700; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
-    .hero-sub { font-size: 17px; color: var(--text-muted); margin-bottom: 32px; max-width: 620px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .hero-sub { font-size: 15px; color: var(--text-light); margin-bottom: 12px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .hero-proposition { font-size: 18px; color: var(--text); font-weight: 500; margin-bottom: 32px; max-width: 660px; margin-left: auto; margin-right: auto; line-height: 1.6; letter-spacing: -0.2px; }
+    .hero-proposition strong { font-weight: 700; }
     .hero-links { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; }
     .btn { display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; border-radius: 8px; font-size: 14px; font-weight: 600; text-decoration: none; transition: all 0.2s; }
     .btn-primary { background: var(--text); color: var(--bg); }
@@ -66,12 +68,16 @@
     /* Problem cards */
     .problem-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 32px; }
     .problem-card { padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); }
-    .problem-card h4 { font-size: 15px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
+    .problem-card h4 { font-size: 14px; font-weight: 600; margin-bottom: 8px; display: flex; align-items: center; gap: 8px; }
     .problem-card p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
     .x-mark { color: #cc4444; } .check-mark { color: #3d9970; }
+    .cmp-face { display: inline-block; width: 22px; height: 22px; vertical-align: middle; background-repeat: no-repeat; background-position: center; background-size: contain; }
+    .cmp-good { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10' fill='%23d4edda' stroke='%233d9970' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='9' r='1.2' fill='%233d9970'/%3E%3Ccircle cx='14' cy='9' r='1.2' fill='%233d9970'/%3E%3Cpath d='M7 13.5Q11 17 15 13.5' fill='none' stroke='%233d9970' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E"); }
+    .cmp-bad { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10' fill='%23f8d7da' stroke='%23cc4444' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='9' r='1.2' fill='%23cc4444'/%3E%3Ccircle cx='14' cy='9' r='1.2' fill='%23cc4444'/%3E%3Cpath d='M7 15.5Q11 12 15 15.5' fill='none' stroke='%23cc4444' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E"); }
+    .cmp-mid { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10' fill='%23fff3cd' stroke='%23d4a017' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='9' r='1.2' fill='%23d4a017'/%3E%3Ccircle cx='14' cy='9' r='1.2' fill='%23d4a017'/%3E%3Cline x1='7.5' y1='14' x2='14.5' y2='14' stroke='%23d4a017' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E"); }
     .insight-box { margin-top: 36px; padding: 24px 28px; border-left: 3px solid var(--text); border-radius: 0 var(--radius) var(--radius) 0; }
     .insight-box .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 8px; }
-    .insight-box p { font-size: 15px; line-height: 1.75; }
+    .insight-box p { font-size: 16px; line-height: 1.625; }
     .insight-box em { font-style: italic; font-weight: 600; }
 
     /* Method */
@@ -81,7 +87,7 @@
     .method-steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 32px; }
     .method-step { padding: 24px; border-radius: var(--radius); border: 1px solid var(--border); }
     .method-step .step-num { width: 28px; height: 28px; border-radius: 50%; background: var(--accent-light); color: var(--text); display: flex; align-items: center; justify-content: center; font-size: 13px; font-weight: 700; margin-bottom: 12px; border: 1px solid var(--border); }
-    .method-step h4 { font-size: 15px; font-weight: 600; margin-bottom: 6px; }
+    .method-step h4 { font-size: 14px; font-weight: 600; margin-bottom: 6px; }
     .method-step p { font-size: 14px; color: var(--text-muted); line-height: 1.6; }
 
     /* ── Generic tab system ── */
@@ -108,7 +114,7 @@
     .legend-dot.humanoid { background: #5B8DC9; }
     .legend-dot.human { background: #F5D76E; }
     .tsne-tab-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
-    .tsne-conclusion { margin-top: 40px; padding: 24px 28px; background: var(--accent-light); border: 1px solid var(--border); border-radius: var(--radius); font-size: 15px; line-height: 1.75; color: var(--text-muted); text-align: center; }
+    .tsne-conclusion { margin-top: 40px; padding: 24px 28px; background: var(--accent-light); border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; line-height: 1.625; color: var(--text-muted); text-align: center; }
     .tsne-conclusion strong { color: var(--text); }
 
     /* Branching layout */
@@ -166,6 +172,9 @@
     .video-card-inner { position: relative; }
     .droid-wide-card { border-radius: 8px; }
     .droid-wide-card video { aspect-ratio: 1920 / 384; object-fit: contain; background: #000; }
+    .wm-cotrain-wide-card { border-radius: 8px; }
+    .wm-cotrain-wide-card video { aspect-ratio: 1008 / 192; object-fit: contain; background: #000; }
+    .wm-cotrain-heading { font-size: 14px; font-weight: 600; color: var(--text); margin-bottom: 10px; }
     .real-video-card video { aspect-ratio: 4 / 3; object-fit: contain; }
     .robot-demo-card video { aspect-ratio: 16 / 9; object-fit: contain; }
     .human-demo-card video { aspect-ratio: 16 / 9; object-fit: contain; }
@@ -179,6 +188,7 @@
     .ood-zone--train .ood-zone-label { color: rgba(91,141,201,0.50); }
     .ood-zone--exec .ood-zone-label { color: rgba(184,134,11,0.55); }
     .ood-zone-cols { display: flex; gap: 14px; align-items: flex-start; }
+    .ood-zone .video-card-instruction { min-height: 76px; }
     .ood-zone .video-card { background: transparent; }
     .ood-zone .video-card video { height: 160px; width: auto; display: block; }
     .ood-zone .col-label { font-size: 12px; font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; text-align: center; }
@@ -199,14 +209,17 @@
     /* Results */
     .result-block { margin-bottom: 56px; }
     .result-block:last-child { margin-bottom: 0; }
-    .result-title { font-size: 22px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.3px; }
-    .result-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.7; }
+    .result-title { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.2px; }
+    .result-takeaway { font-size: 13px; color: var(--text-light); margin-bottom: 16px; font-style: italic; letter-spacing: 0.1px; }
+    .result-takeaway strong { color: var(--text-muted); font-style: normal; }
+    .topic-header { font-size: 24px; font-weight: 700; color: var(--text); margin: 64px 0 24px; letter-spacing: -0.4px; line-height: 1.3; padding-left: 16px; border-left: 3px solid var(--text); }
+    .result-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.625; }
     .chart-container { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
     .chart-container canvas { max-height: 400px; }
     .tab-bar[data-tabgroup="perf"] .tab-btn { font-size: 14px; font-weight: 700; padding: 10px 24px; letter-spacing: -0.2px; }
-    .perf-tab-desc { font-size: 15px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
+    .perf-tab-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.625; }
     .inline-result { font-weight: 700; color: var(--text); }
-    .narrative-text { font-size: 16px; line-height: 1.8; margin-bottom: 16px; }
+    .narrative-text { font-size: 16px; line-height: 1.625; margin-bottom: 16px; }
 
     /* Tables */
     .data-table { width: 100%; border-collapse: collapse; font-size: 14px; }
@@ -217,20 +230,31 @@
     .data-table .method-name { font-weight: 600; }
     .data-table .highlight-row { background: var(--accent-light); }
 
-    /* Video placeholders */
-    .demo-card { border-radius: var(--radius); overflow: hidden; border: 1px solid var(--border); }
-    .demo-card-header { padding: 16px 20px; display: flex; align-items: center; gap: 10px; border-bottom: 1px solid var(--border); }
+    /* Hero demo cards — gradient border */
+    .demo-card-wrap { border-radius: 12px; padding: 1.5px; background: linear-gradient(135deg, rgba(91,141,201,0.35), rgba(245,215,110,0.45)); }
+    .demo-card { border-radius: 11px; overflow: hidden; border: none; background: var(--bg); }
+    .demo-card-header { padding: 16px 20px 8px; display: flex; align-items: center; gap: 12px; }
     .demo-card-header .icon { width: 32px; height: 32px; border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: 16px; }
     .demo-card-header .icon-policy { background: #dbeafe; }
     .demo-card-header .icon-wm { background: #fef3c7; }
-    .demo-card-header h3 { font-size: 14px; font-weight: 600; }
-    .demo-card-header p { font-size: 12px; color: var(--text-muted); }
-    .demo-card-body { aspect-ratio: 16/9; display: flex; align-items: center; justify-content: center; background: var(--accent-light); color: var(--text-light); font-size: 14px; position: relative; }
-    .video-placeholder { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; padding: 20px; text-align: center; }
-    .video-placeholder .play-icon { width: 44px; height: 44px; border-radius: 50%; background: var(--text); color: var(--bg); display: flex; align-items: center; justify-content: center; font-size: 18px; }
+    .demo-card-header h3 { font-size: 16px; font-weight: 700; letter-spacing: -0.2px; }
+    .demo-card-header p { font-size: 12px; color: var(--text-muted); margin-top: 1px; }
+
+    /* Arrow pulse animation */
+    @keyframes arrowFlow {
+      0% { left: 0; opacity: 0; }
+      15% { opacity: 1; }
+      85% { opacity: 1; }
+      100% { left: calc(100% - 6px); opacity: 0; }
+    }
+    .hero-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; min-width: 52px; align-self: center; gap: 5px; }
+    .hero-arrow-line { width: 100%; height: 0; border-top: 1.5px dashed rgba(0,0,0,0.12); position: relative; }
+    .hero-arrow-line::after { content: ''; position: absolute; right: -1px; top: -4.5px; border-left: 7px solid var(--text-light); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: 0.5; }
+    .hero-arrow-line::before { content: ''; position: absolute; top: -3px; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 6px rgba(91,141,201,0.6); animation: arrowFlow 2s ease-in-out infinite; }
+    .hero-arrow-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); white-space: nowrap; background: var(--bg); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border); }
 
     /* Callouts */
-    .callout { padding: 20px 24px; border-radius: var(--radius); margin: 24px 0; font-size: 15px; line-height: 1.7; }
+    .callout { padding: 20px 24px; border-radius: var(--radius); margin: 24px 0; font-size: 16px; line-height: 1.625; }
     .callout-blue { border-left: 3px solid var(--text); }
 
     /* Citation */
@@ -275,13 +299,17 @@
 <!-- Hero -->
 <section class="hero">
   <div class="container-wide">
-    <div class="section-label">NeurIPS 2026</div>
+    <div class="section-label">Under Review</div>
     <h1 class="hero-title">
       UniT: A Unified Physical Language for<br>
       Human-to-Humanoid Transfer
     </h1>
     <p class="hero-sub">
-      Scaling humanoid foundation models is bottlenecked by scarce robotic data. While massive egocentric human data offers a scalable alternative, bridging the cross-embodiment chasm remains a fundamental challenge. UniT establishes a <strong>unified physical language</strong> — one tokenizer that enables zero-shot transfer for both policy learning and world modeling.
+      Scaling humanoid foundation models is bottlenecked by scarce robotic data.<br>
+      While massive egocentric human data offers a scalable alternative, bridging the cross-embodiment chasm remains a fundamental challenge.
+    </p>
+    <p class="hero-proposition">
+      UniT establishes a <strong>unified physical language</strong> — one tokenizer that enables<br>zero-shot transfer for both policy learning and world modeling.
     </p>
     <div class="hero-links">
       <a href="#" class="btn btn-primary">
@@ -302,40 +330,96 @@
 <!-- Hero demo videos -->
 <section class="section" style="padding-top: 0;">
   <div class="container-wide">
-    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
-      <div class="demo-card">
-        <div class="demo-card-header">
-          <div class="icon icon-policy">&#x1F916;</div>
-          <div><h3>Zero-Shot Policy Transfer</h3><p>Human demo &rarr; Humanoid executes unseen task</p></div>
-        </div>
-        <div class="demo-card-body">
-          <div class="video-placeholder"><div class="play-icon">&#x25B6;</div><span>Policy transfer video — stacking with emergent waist rotation</span></div>
+    <div style="display: flex; flex-direction: column; gap: 20px;">
+
+      <!-- Row 1: Policy Transfer (VLA) -->
+      <div class="demo-card-wrap">
+        <div class="demo-card">
+          <div class="demo-card-header">
+            <div class="icon icon-policy">&#x1F916;</div>
+            <div><h3>Zero-Shot Policy Transfer</h3><p>Human demo &rarr; Humanoid executes unseen task</p></div>
+          </div>
+          <div style="padding: 20px; display: flex; align-items: flex-start; justify-content: center; gap: 0;">
+            <div style="text-align: center; flex: 1; min-width: 0;">
+              <div style="font-size: 11px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Human Demonstration</div>
+              <div class="video-card" style="border-color: rgba(91,141,201,0.15); background: rgba(91,141,201,0.03);">
+                <div class="video-card-inner"><video id="vla-hero-human" src="movies/real/zero-shot/stack-teaser-web.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
+                <div class="video-card-instruction" style="background: rgba(91,141,201,0.06);">Stack the <strong style="color:var(--blue);">green bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
+              </div>
+            </div>
+            <div class="hero-arrow">
+              <div class="hero-arrow-line"></div>
+              <div class="hero-arrow-label">Zero-Shot</div>
+            </div>
+            <div style="text-align: center; flex: 1; min-width: 0;">
+              <div style="font-size: 11px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Robot Zero-Shot Execution</div>
+              <div class="video-card" style="border-color: rgba(196,144,0,0.15); background: rgba(245,215,110,0.04);">
+                <div class="video-card-inner"><video id="vla-hero-robot" src="movies/real/zero-shot/robot_stack_web.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
+                <div class="video-card-instruction" style="background: rgba(245,215,110,0.06);">Stack the <strong style="color:var(--blue);">blue bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="demo-card">
-        <div class="demo-card-header">
-          <div class="icon icon-wm">&#x1F30D;</div>
-          <div><h3>Zero-Shot Cross Conditioning</h3><p>Human action &rarr; Humanoid video generation</p></div>
-        </div>
-        <div class="demo-card-body">
-          <div class="video-placeholder"><div class="play-icon">&#x25B6;</div><span>Human-to-robot conditioning — world model generates robot execution</span></div>
+
+      <!-- Row 2: Cross Conditioning (WM) -->
+      <div class="demo-card-wrap">
+        <div class="demo-card">
+          <div class="demo-card-header">
+            <div class="icon icon-wm">&#x1F30D;</div>
+            <div><h3>Zero-Shot Cross Conditioning</h3><p>Human action &rarr; Humanoid video generation</p></div>
+          </div>
+          <div style="padding: 20px; display: flex; align-items: flex-start; justify-content: center; gap: 0;">
+            <div style="text-align: center; flex: 1; min-width: 0;">
+              <div style="font-size: 11px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Human Conditioning</div>
+              <div class="video-card" style="border-color: rgba(91,141,201,0.15); background: rgba(91,141,201,0.03);">
+                <div class="video-card-inner"><video id="wm-hero-human" src="movies/wm/zero-shot/human.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
+                <div class="video-card-instruction" style="background: rgba(91,141,201,0.06); visibility: hidden;">&nbsp;</div>
+              </div>
+            </div>
+            <div class="hero-arrow">
+              <div class="hero-arrow-line"></div>
+              <div class="hero-arrow-label">Zero-Shot</div>
+            </div>
+            <div style="text-align: center; flex: 1; min-width: 0;">
+              <div style="font-size: 11px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Robot Generated Video</div>
+              <div class="video-card" style="border-color: rgba(196,144,0,0.15); background: rgba(245,215,110,0.04);">
+                <div class="video-card-inner"><video id="wm-hero-robot" src="movies/wm/zero-shot/robot.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
+                <div class="video-card-instruction" style="background: rgba(245,215,110,0.06); visibility: hidden;">&nbsp;</div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+
     </div>
   </div>
 </section>
 
 <!-- Motivation -->
 <section class="section" id="problem">
-  <div class="container">
+  <div class="container-wide">
     <div class="section-label">Motivation</div>
     <h2 class="section-title">The Human-to-Humanoid Transfer Problem</h2>
     <p class="section-subtitle">Scaling humanoid foundation models is bottlenecked by scarce robot data. Massive human motion sequences provide a scalable alternative rich in physical interaction priors — but biomechanical and hardware differences create heterogeneous state-action spaces with mismatched degrees of freedom and control paradigms.</p>
     <div class="problem-grid">
-      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> Motion Retargeting</h4><p>Complex kinematic solvers map human motions to specific robots case by case. Labor-intensive, unscalable, and retargeted actions often misalign with the original visual observations.</p></div>
-      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> End-to-End Co-Training</h4><p>Co-training on mixed embodiment data end-to-end forces the model to fit fundamentally different action distributions simultaneously, often leading to embodiment-specific shortcuts rather than shared representations.</p></div>
-      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> Action-Only Tokenization</h4><p>Relies exclusively on proprioceptive reconstruction. Without external visual grounding, these representations suffer from severe distribution shifts between humans and robots.</p></div>
-      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> Vision-Only Latent Actions</h4><p>Infers intent directly from pixels, bypassing kinematic mismatches. But these representations are prone to entangling low-level appearance confounders (textures, lighting) and leave structural priors of human pose data underexploited.</p></div>
+      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> Motion Retargeting</h4><p>Complex kinematic solvers map human motions to specific robots case by case. <strong style="color:var(--text);">Labor-intensive</strong> and <strong style="color:var(--text);">unscalable</strong> — retargeted actions often <strong style="color:var(--text);">misalign</strong> with the original visual observations.</p></div>
+      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> End-to-End Co-Training</h4><p>Co-training on mixed embodiment data end-to-end forces the model to fit fundamentally <strong style="color:var(--text);">different action distributions</strong> simultaneously, often leading to <strong style="color:var(--text);">embodiment-specific shortcuts</strong> rather than shared representations.</p></div>
+      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> Action-Only Tokenization</h4><p>Relies exclusively on proprioceptive reconstruction. Without external visual grounding, these representations suffer from <strong style="color:var(--text);">severe distribution shifts</strong> between humans and robots.</p></div>
+      <div class="problem-card"><h4><span class="x-mark">&#x2715;</span> Vision-Only Latent Actions</h4><p>Infers intent directly from pixels, bypassing kinematic mismatches. But prone to entangling low-level <strong style="color:var(--text);">appearance confounders</strong> (textures, lighting) and leaves <strong style="color:var(--text);">structural priors</strong> of human pose data underexploited.</p></div>
+    </div>
+    <p class="section-subtitle" style="margin-top: 32px;">How do existing paradigms compare across the key desiderata for human-to-humanoid transfer?</p>
+    <div class="chart-container" style="overflow-x: auto; margin-top: 16px;">
+      <table class="data-table" style="text-align: center;">
+        <thead><tr><th style="text-align: left;">Approach</th><th>Scalable</th><th>Visual Grounding</th><th>Kinematic Aware</th><th>Cross-Embodiment</th><th>Noise Robust</th></tr></thead>
+        <tbody>
+          <tr><td class="method-name" style="text-align: left;">Motion Retargeting</td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-bad"></span></td></tr>
+          <tr><td class="method-name" style="text-align: left;">End-to-End Co-Training</td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-bad"></span></td></tr>
+          <tr><td class="method-name" style="text-align: left;">Action-Only Tokenization</td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-bad"></span></td></tr>
+          <tr><td class="method-name" style="text-align: left;">Vision-Only Latent Actions</td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-bad"></span></td><td><span class="cmp-face cmp-mid"></span></td><td><span class="cmp-face cmp-bad"></span></td></tr>
+          <tr class="highlight-row"><td class="method-name" style="text-align: left; font-weight:700; color:var(--blue);">UniT (Ours)</td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-good"></span></td><td><span class="cmp-face cmp-good"></span></td></tr>
+        </tbody>
+      </table>
     </div>
     <div class="insight-box">
       <div class="label">Our Key Insight</div>
@@ -351,13 +435,13 @@
     <h2 class="section-title">Visual Anchoring via Cross-Reconstruction</h2>
     <p class="section-subtitle">UniT functions as a cross-modal information bottleneck: it concurrently extracts temporal-visual, kinematic, and fused visuo-motor features, and enforces rigorous cross-reconstruction to distill the embodiment-agnostic physical intent.</p>
     <figure class="method-figure">
-      <video src="method.mp4" autoplay loop muted playsinline style="width: 100%; display: block;"></video>
+      <video src="method.mp4?v=1776341418" autoplay loop muted playsinline style="width: 100%; display: block;"></video>
       <figcaption><strong>Architecture of UniT.</strong> Cross-embodiment vision pairs (O<sub>t</sub>, O<sub>t+k</sub>) and action chunks A<sub>t:t+k</sub> are encoded into vision, action, and fused features via tri-branch encoders. A shared RQ-VAE codebook quantizes all three branches into a unified discrete space. Both vision and action decoders reconstruct from these shared tokens, enforcing cross-reconstruction alignment.</figcaption>
     </figure>
     <div class="method-steps">
-      <div class="method-step"><div class="step-num">1</div><h4>Tri-Branch Encoding</h4><p>A <strong>visual branch</strong> (IDM on frozen DINOv2 features) captures physical transitions; an <strong>action branch</strong> encodes embodiment-specific state and action chunks via per-embodiment MLPs; a <strong>fusion branch</strong> integrates both into a compact visuo-motor representation.</p></div>
+      <div class="method-step"><div class="step-num">1</div><h4>Tri-Branch Encoding</h4><p><strong>Visual branch</strong> (IDM on frozen DINOv2 features) captures physical transitions.<br><strong>Action branch</strong> encodes embodiment-specific state and action chunks via per-embodiment MLPs.<br><strong>Fusion branch</strong> integrates both into a compact visuo-motor representation.</p></div>
       <div class="method-step"><div class="step-num">2</div><h4>Cross-Reconstruction</h4><p>Every quantized token is decoded by <strong>both</strong> a visual decoder (FDM) and an action decoder. By forcing kinematic features to reconstruct visual transitions, heterogeneous actions are anchored to their physical consequences. Uncorrelated noise from either domain is discarded.</p></div>
-      <div class="method-step"><div class="step-num">3</div><h4>Two Deployment Modes</h4><p><strong>VLA-UniT</strong> predicts fusion-branch tokens as a structured cross-embodiment learning objective for VLMs. <strong>WM-UniT</strong> uses action-branch features as a universal conditioning interface for video generation.</p></div>
+      <div class="method-step"><div class="step-num">3</div><h4>Two Deployment Modes</h4><p><strong>Policy learning:</strong> Fusion-branch tokens serve as a structured cross-embodiment prediction target for VLMs (VLA-UniT).<br><strong>World modeling:</strong> Continuous action-branch features provide a universal conditioning interface for video generation (WM-UniT).</p></div>
     </div>
     <div style="display: grid; grid-template-columns: 1.093fr 1fr; gap: 24px; margin-top: 36px;">
       <figure class="method-figure" style="margin: 0;">
@@ -434,10 +518,12 @@
     <h2 class="section-title">Policy Learning: From Data Efficiency to Zero-Shot Transfer</h2>
     <p class="section-subtitle">UniT token prediction provides the VLM with a compact, visually-anchored learning objective that encodes physical intent. We evaluate on the RoboCasa GR1 benchmark (24 tabletop tasks, 50 episodes each) and a real-world full-body humanoid (IRON-R01-1.11, 50-DoF).</p>
 
+    <div class="topic-header" style="margin-top: 40px;">Efficiency</div>
+
     <!-- Benchmark + Data Efficiency — tab switched -->
-    <div class="result-block" style="margin-top: 48px;">
+    <div class="result-block">
       <div class="tab-bar" data-tabgroup="perf">
-        <button class="tab-btn active" data-tab="perf-bench">Benchmark Performance</button>
+        <button class="tab-btn active" data-tab="perf-bench">Superior Benchmark Performance</button>
         <button class="tab-btn" data-tab="perf-eff">10x Data Efficiency</button>
       </div>
       <div class="tab-panel active" data-tabgroup="perf" data-tab="perf-bench">
@@ -508,6 +594,8 @@
       </div>
     </div>
 
+    <div class="topic-header">Human-to-Humanoid Transfer</div>
+
     <!-- Human Data -->
     <div class="result-block">
       <h3 class="result-title">Human Data Unlocks Generalization</h3>
@@ -526,14 +614,14 @@
                 <video src="movies/robocasa/ood/web/ood-1-1.mp4" autoplay muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
-              <div class="video-card-instruction">Pick the bell pepper from the cutting board and place it in the basket</div>
+              <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">bell pepper</strong> from the cutting board and place it in the basket <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* bell pepper appears with unseen texture and color variant</span></div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
                 <video src="movies/robocasa/ood/web/ood-1-2.mp4" autoplay muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
-              <div class="video-card-instruction">Pick the croissant from the cutting board and place it in the cardboard box</div>
+              <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">croissant</strong> from the cutting board and place it in the cardboard box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* croissant appears with unseen visual appearance</span></div>
             </div>
           </div>
         </div>
@@ -544,14 +632,14 @@
                 <video src="movies/robocasa/ood/web/ood-2-1.mp4" autoplay muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
-              <div class="video-card-instruction">Pick up the wine, place it into the drawer and close the drawer</div>
+              <div class="video-card-instruction">Pick up the <strong style="color:var(--blue);">wine</strong>, place it into the <strong style="color:var(--blue);">drawer</strong> and close the drawer <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* wine &times; drawer pairing never seen during training</span></div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
                 <video src="movies/robocasa/ood/web/ood-2-2.mp4" autoplay muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
-              <div class="video-card-instruction">Pick the sweet potato from the placemat and place it in the pot</div>
+              <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">sweet potato</strong> from the placemat and place it in the <strong style="color:var(--blue);">pot</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* sweet potato &times; pot pairing never seen during training</span></div>
             </div>
           </div>
         </div>
@@ -562,14 +650,14 @@
                 <video src="movies/robocasa/ood/web/ood-3-1.mp4" autoplay muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
-              <div class="video-card-instruction">Pick the rubix cube from the placemat and place it in the pan</div>
+              <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">rubix cube</strong> from the placemat and place it in the pan <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* rubix cube is an entirely unseen object category</span></div>
             </div>
             <div class="video-card">
               <div class="video-card-inner">
                 <video src="movies/robocasa/ood/web/ood-3-2.mp4" autoplay muted loop playsinline></video>
                 <div class="video-speed-badge">Autonomous 2.0x</div>
               </div>
-              <div class="video-card-instruction">Pick the fish from the placemat and place it in the pot</div>
+              <div class="video-card-instruction">Pick the <strong style="color:var(--blue);">fish</strong> from the placemat and place it in the pot <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* fish is an entirely unseen object category</span></div>
             </div>
           </div>
         </div>
@@ -578,13 +666,14 @@
 
     <!-- Real-World — tabbed -->
     <div class="result-block">
-      <h3 class="result-title">Real-World Deployment</h3>
+      <h3 class="result-title">Human Data Drives Real-World Performance</h3>
       <p class="result-desc">Deployed on IRON-R01-1.11 humanoid (50-DoF) with two tasks: Pick &amp; Place (analogous to EgoDex basic_pick_place) and Pouring (bimanual). Five OOD axes test geometry, distractor, target, background, and combinational generalization.</p>
       <div class="tab-bar" data-tabgroup="real">
-        <button class="tab-btn active" data-tab="real-indomain">In-Domain</button>
-        <button class="tab-btn" data-tab="real-ood">OOD Generalization</button>
+        <button class="tab-btn active" data-tab="real-indomain">Human Data Boosts In-Domain Accuracy</button>
+        <button class="tab-btn" data-tab="real-ood">Human Data Unlocks OOD Generalization</button>
       </div>
       <div class="tab-panel active" data-tabgroup="real" data-tab="real-indomain">
+        <p class="perf-tab-desc">VLA-UniT outperforms GR00T on both tasks with robot data alone. Human co-training further improves Pick &amp; Place to <span class="inline-result">78%</span> and Pouring to <span class="inline-result">75%</span>, benefiting from rich bimanual coordination patterns in human demonstrations.</p>
         <div class="chart-container"><canvas id="chart-real-indomain"></canvas></div>
         <div style="margin-top: 32px;">
           <div class="tab-bar" data-tabgroup="real-id-videos">
@@ -637,6 +726,7 @@
         </div>
       </div>
       <div class="tab-panel" data-tabgroup="real" data-tab="real-ood">
+        <p class="perf-tab-desc">Human co-training consistently improves all 5 OOD axes. Geometry (<span class="inline-result">23%&#x2192;63%</span>) and Distractor (<span class="inline-result">27%&#x2192;60%</span>) show the largest gains, confirming that human data fills the variation gap left by limited robot demonstrations.</p>
         <div class="chart-container"><canvas id="chart-real-ood"></canvas></div>
         <div style="margin-top: 32px;">
           <div class="tab-bar" data-tabgroup="real-ood-videos">
@@ -647,34 +737,34 @@
             <button class="tab-btn" data-tab="ood-combi">Combinational</button>
           </div>
 
-          <!-- Background (ood4) -->
-          <div class="tab-panel" data-tabgroup="real-ood-videos" data-tab="ood-bg">
+          <!-- Geometry (ood3) -->
+          <div class="tab-panel active" data-tabgroup="real-ood-videos" data-tab="ood-geo">
             <div class="ood-layout">
               <div class="ood-zone ood-zone--train">
                 <div class="ood-zone-label">Training Coverage</div>
                 <div class="ood-zone-cols">
                   <div>
                     <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
-                    <div class="col-desc">Trained on standard setting</div>
+                    <div class="col-desc">Limited, fixed object set</div>
                     <div class="video-card robot-demo-card">
                       <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the banana in the box</div>
+                      <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card robot-demo-card" style="margin-top: 12px;">
                       <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the bowl in the box</div>
+                      <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
                   <div>
                     <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
-                    <div class="col-desc">Demonstrates OOD variation</div>
+                    <div class="col-desc">Diverse objects with varied geometries</div>
                     <div class="video-card human-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-back.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (banana)</div>
+                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-geo.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Pick and place the <strong style="color:var(--blue);">bread</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied geometry, similar grasp</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card human-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-back.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (bowl)</div>
+                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-geo.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Pick and place the <strong style="color:var(--blue);">cup</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied geometry, similar grasp</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
                 </div>
@@ -683,66 +773,15 @@
               <div class="ood-zone ood-zone--exec">
                 <div class="ood-zone-label">Zero-Shot Execution</div>
                 <div>
-                  <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Background</div>
+                  <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Geometry</div>
                   <div class="col-desc">&nbsp;</div>
                   <div class="video-card real-video-card">
-                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood4.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the banana in the box</div>
+                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood3.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Put the <strong style="color:var(--blue);">bread</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen geometry; grasp pattern from human data</span></div>
                   </div>
                   <div class="video-card real-video-card" style="margin-top: 12px;">
-                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood4.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the bowl in the box</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Target (ood2) -->
-          <div class="tab-panel" data-tabgroup="real-ood-videos" data-tab="ood-target">
-            <div class="ood-layout">
-              <div class="ood-zone ood-zone--train">
-                <div class="ood-zone-label">Training Coverage</div>
-                <div class="ood-zone-cols">
-                  <div>
-                    <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
-                    <div class="col-desc">Trained on standard setting</div>
-                    <div class="video-card robot-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the banana in the box</div>
-                    </div>
-                    <div class="video-card robot-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the bowl in the box</div>
-                    </div>
-                  </div>
-                  <div>
-                    <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
-                    <div class="col-desc">Demonstrates OOD variation</div>
-                    <div class="video-card human-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-target.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (banana)</div>
-                    </div>
-                    <div class="video-card human-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-target.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (bowl)</div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="ood-zone-arrow"><div class="ood-arrow-line"></div><div class="ood-arrow-label">UniT Transfer</div></div>
-              <div class="ood-zone ood-zone--exec">
-                <div class="ood-zone-label">Zero-Shot Execution</div>
-                <div>
-                  <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Target</div>
-                  <div class="col-desc">&nbsp;</div>
-                  <div class="video-card real-video-card">
-                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood2.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the banana in the blue bowl</div>
-                  </div>
-                  <div class="video-card real-video-card" style="margin-top: 12px;">
-                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood2.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the bowl on the red plate</div>
+                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood3.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Put the <strong style="color:var(--blue);">cup</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen geometry; grasp pattern from human data</span></div>
                   </div>
                 </div>
               </div>
@@ -757,26 +796,26 @@
                 <div class="ood-zone-cols">
                   <div>
                     <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
-                    <div class="col-desc">Trained on standard setting</div>
+                    <div class="col-desc">Limited, single-object scenes</div>
                     <div class="video-card robot-demo-card">
                       <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the banana in the box</div>
+                      <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card robot-demo-card" style="margin-top: 12px;">
                       <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the bowl in the box</div>
+                      <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
                   <div>
                     <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
-                    <div class="col-desc">Demonstrates OOD variation</div>
+                    <div class="col-desc">Diverse, cluttered multi-object scenes</div>
                     <div class="video-card human-demo-card">
                       <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-dis.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (banana)</div>
+                      <div class="video-card-instruction">Pick and place the banana <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied surrounding <strong style="color:var(--blue);font-style:normal;">distractors</strong></span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card human-demo-card" style="margin-top: 12px;">
                       <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-dis.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (bowl)</div>
+                      <div class="video-card-instruction">Pick and place the bowl <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied surrounding <strong style="color:var(--blue);font-style:normal;">distractors</strong></span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
                 </div>
@@ -789,45 +828,45 @@
                   <div class="col-desc">&nbsp;</div>
                   <div class="video-card real-video-card">
                     <div class="video-card-inner"><video src="movies/real/ood/banana-ood1.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the banana in the box</div>
+                    <div class="video-card-instruction">Pick and place the banana <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">distractors</strong>; absent in robot data</span></div>
                   </div>
                   <div class="video-card real-video-card" style="margin-top: 12px;">
                     <div class="video-card-inner"><video src="movies/real/ood/bowl-ood1.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the bowl in the box</div>
+                    <div class="video-card-instruction">Pick and place the bowl <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">distractors</strong>; absent in robot data</span></div>
                   </div>
                 </div>
               </div>
             </div>
           </div>
 
-          <!-- Geometry (ood3) -->
-          <div class="tab-panel active" data-tabgroup="real-ood-videos" data-tab="ood-geo">
+          <!-- Target (ood2) -->
+          <div class="tab-panel" data-tabgroup="real-ood-videos" data-tab="ood-target">
             <div class="ood-layout">
               <div class="ood-zone ood-zone--train">
                 <div class="ood-zone-label">Training Coverage</div>
                 <div class="ood-zone-cols">
                   <div>
                     <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
-                    <div class="col-desc">Trained on standard setting</div>
+                    <div class="col-desc">Limited, fixed target (box only)</div>
                     <div class="video-card robot-demo-card">
                       <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the bread in the box</div>
+                      <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card robot-demo-card" style="margin-top: 12px;">
                       <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Put the cup in the box</div>
+                      <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
                   <div>
                     <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
-                    <div class="col-desc">Demonstrates OOD variation</div>
+                    <div class="col-desc">Diverse target receptacles</div>
                     <div class="video-card human-demo-card">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-geo.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (bread)</div>
+                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-target.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Place the object in the <strong style="color:var(--blue);">blue bowl</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">target</strong> receptacle</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                     <div class="video-card human-demo-card" style="margin-top: 12px;">
-                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-geo.mp4" autoplay muted loop playsinline></video></div>
-                      <div class="video-card-instruction">Human demonstration (cup)</div>
+                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-target.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Place the object on the <strong style="color:var(--blue);">red plate</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">target</strong> receptacle</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
                     </div>
                   </div>
                 </div>
@@ -836,15 +875,66 @@
               <div class="ood-zone ood-zone--exec">
                 <div class="ood-zone-label">Zero-Shot Execution</div>
                 <div>
-                  <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Geometry</div>
+                  <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Target</div>
                   <div class="col-desc">&nbsp;</div>
                   <div class="video-card real-video-card">
-                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood3.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the bread in the box</div>
+                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood2.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Place the object in the <strong style="color:var(--blue);">blue bowl</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">target</strong>; only box in robot data</span></div>
                   </div>
                   <div class="video-card real-video-card" style="margin-top: 12px;">
-                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood3.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                    <div class="video-card-instruction">Put the cup in the box</div>
+                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood2.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Place the object on the <strong style="color:var(--blue);">red plate</strong> <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">target</strong>; only box in robot data</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Background (ood4) -->
+          <div class="tab-panel" data-tabgroup="real-ood-videos" data-tab="ood-bg">
+            <div class="ood-layout">
+              <div class="ood-zone ood-zone--train">
+                <div class="ood-zone-label">Training Coverage</div>
+                <div class="ood-zone-cols">
+                  <div>
+                    <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
+                    <div class="col-desc">Limited, single-scene collection</div>
+                    <div class="video-card robot-demo-card">
+                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-banana.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
+                    </div>
+                    <div class="video-card robot-demo-card" style="margin-top: 12px;">
+                      <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
+                    </div>
+                  </div>
+                  <div>
+                    <div class="col-label"><span class="step-num step-num--human">2</span>Human Demo</div>
+                    <div class="col-desc">Diverse scenes and backdrops</div>
+                    <div class="video-card human-demo-card">
+                      <div class="video-card-inner"><video src="movies/real/human_demo/human-banana-back.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Pick up the banana <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">backdrop</strong> setting</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
+                    </div>
+                    <div class="video-card human-demo-card" style="margin-top: 12px;">
+                      <div class="video-card-inner"><video src="movies/real/human_demo/human-bowl-back.mp4" autoplay muted loop playsinline></video></div>
+                      <div class="video-card-instruction">Pick up the bowl <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* varied <strong style="color:var(--blue);font-style:normal;">backdrop</strong> setting</span><span style="display:block;font-size:11px;">&nbsp;</span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="ood-zone-arrow"><div class="ood-arrow-line"></div><div class="ood-arrow-label">UniT Transfer</div></div>
+              <div class="ood-zone ood-zone--exec">
+                <div class="ood-zone-label">Zero-Shot Execution</div>
+                <div>
+                  <div class="col-label"><span class="step-num step-num--result">3</span>OOD: Background</div>
+                  <div class="col-desc">&nbsp;</div>
+                  <div class="video-card real-video-card">
+                    <div class="video-card-inner"><video src="movies/real/ood/banana-ood4.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Put the banana in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">backdrop</strong>; single scene in robot data</span></div>
+                  </div>
+                  <div class="video-card real-video-card" style="margin-top: 12px;">
+                    <div class="video-card-inner"><video src="movies/real/ood/bowl-ood4.mp4" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
+                    <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen <strong style="color:var(--blue);font-style:normal;">backdrop</strong>; single scene in robot data</span></div>
                   </div>
                 </div>
               </div>
@@ -858,9 +948,10 @@
                 <div class="ood-zone-label">Training Coverage</div>
                 <div>
                   <div class="col-label"><span class="step-num step-num--ref">1</span>Robot Demo</div>
+                  <div class="col-desc">Limited, fixed object &times; scene</div>
                   <div class="video-card robot-demo-card">
                     <div class="video-card-inner"><video src="movies/real/robot_demo/robot-bowl-1.mp4" autoplay muted loop playsinline></video></div>
-                    <div class="video-card-instruction">Put the bowl in the box</div>
+                    <div class="video-card-instruction">Put the bowl in the box <span style="display:block;font-size:11px;margin-top:4px;">&nbsp;</span></div>
                   </div>
                 </div>
               </div>
@@ -869,17 +960,19 @@
                 <div class="ood-zone-label">Combinational Execution</div>
                 <div class="ood-zone-cols">
                   <div>
-                    <div class="col-label"><span class="step-num step-num--result">2</span>Unseen Object</div>
+                    <div class="col-label"><span class="step-num step-num--result">2</span>Unseen Setting</div>
+                    <div class="col-desc">&nbsp;</div>
                     <div class="video-card real-video-card">
                       <div class="video-card-inner"><video src="movies/real/ood/comb-1.mov" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                      <div class="video-card-instruction">Put the cup in the box</div>
+                      <div class="video-card-instruction">Put the <strong style="color:var(--blue);">cup</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen object &times; scene combination</span></div>
                     </div>
                   </div>
                   <div>
                     <div class="col-label"><span class="step-num step-num--result">3</span>Unseen Setting</div>
+                    <div class="col-desc">&nbsp;</div>
                     <div class="video-card real-video-card">
                       <div class="video-card-inner"><video src="movies/real/ood/comb-2.mov" autoplay muted loop playsinline></video><div class="video-speed-badge">Autonomous 4x</div></div>
-                      <div class="video-card-instruction">Put the bowl in the box</div>
+                      <div class="video-card-instruction">Put the <strong style="color:var(--blue);">bowl</strong> in the box <span style="display:block;font-size:11px;color:var(--text-light);margin-top:4px;font-style:italic;">* unseen object &times; scene combination</span></div>
                     </div>
                   </div>
                 </div>
@@ -893,10 +986,37 @@
 
     <!-- Zero-Shot -->
     <div class="result-block">
-      <h3 class="result-title">Zero-Shot Task Transfer</h3>
+      <h3 class="result-title">Human Data Enables Zero-Shot Task Transfer</h3>
       <p class="narrative-text">We evaluate on a stacking task that is <strong>not covered by robot training demonstrations</strong>. Robot data only include pick-and-place of individual bowls, while EgoDex human videos contain stacking sequences performed with view switching and upper-body coordination.</p>
       <div class="chart-container"><canvas id="chart-zero-shot"></canvas></div>
-      <div class="callout callout-blue"><strong>Emergent Coordination.</strong> With human co-training, VLA-UniT reaches 60%, transferring not just task semantics but fine-grained coordination patterns: the humanoid exhibited <em>unprogrammed</em> waist rotation and head turning that directly mirror human demonstrations.</div>
+
+      <div style="margin-top: 32px; display: flex; gap: 0; justify-content: center; align-items: flex-start; max-width: var(--max-w-wide);">
+        <div style="text-align: center;">
+          <div style="font-size: 12px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Human Demonstration</div>
+          <div class="video-card" style="display: inline-block; border-color: rgba(91,141,201,0.15); background: rgba(91,141,201,0.03);">
+            <div class="video-card-inner">
+              <video src="movies/real/zero-shot/human_stack_web.mp4" autoplay muted loop playsinline style="width: auto; height: 260px; aspect-ratio: auto; object-fit: contain;"></video>
+            </div>
+            <div class="video-card-instruction" style="background: rgba(91,141,201,0.06);">Stack the <strong style="color:var(--blue);">green bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
+          </div>
+        </div>
+        <div style="display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; min-width: 56px; align-self: center; gap: 5px;">
+          <div style="width: 100%; height: 0; border-top: 1.5px dashed var(--border); position: relative;"><div style="position: absolute; right: -1px; top: -4.5px; border-left: 7px solid var(--text-light); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: 0.5;"></div></div>
+          <div style="font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); white-space: nowrap; background: var(--bg); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border);">Zero-Shot</div>
+        </div>
+        <div style="text-align: center;">
+          <div style="font-size: 12px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px;">Robot Zero-Shot Execution</div>
+          <div class="video-card" style="display: inline-block; border-color: rgba(196,144,0,0.15); background: rgba(245,215,110,0.04);">
+            <div class="video-card-inner">
+              <video src="movies/real/zero-shot/robot_stack_web.mp4" autoplay muted loop playsinline style="width: auto; height: 260px; aspect-ratio: auto; object-fit: contain;"></video>
+              <div class="video-speed-badge">Autonomous 4x</div>
+            </div>
+            <div class="video-card-instruction" style="background: rgba(245,215,110,0.06);">Stack the <strong style="color:var(--blue);">blue bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="callout callout-blue" style="margin-top: 24px;"><strong>Emergent Coordination.</strong> With human co-training, VLA-UniT reaches 60%, transferring not just task semantics but fine-grained coordination patterns: the humanoid exhibited <em>unprogrammed</em> waist rotation and head turning that directly mirror human demonstrations.</div>
     </div>
   </div>
 </section>
@@ -905,12 +1025,14 @@
 <section class="section" id="world-model">
   <div class="container-wide">
     <div class="section-label">Downstream Paradigm II</div>
-    <h2 class="section-title">World Modeling: From Controllability to Cross-Embodiment Imagination</h2>
+    <h2 class="section-title">World Modeling: From Controllability to Human-Humanoid Imagination</h2>
     <p class="section-subtitle">WM-UniT conditions video generation on UniT's continuous pre-quantization features, providing a visually-grounded conditioning interface that replaces embodiment-specific raw actions. Evaluated via 10-step autoregressive rollouts over 10-second video generation.</p>
 
+    <div class="topic-header" style="margin-top: 40px;">Controllability</div>
+
     <!-- DROID single-embodiment -->
-    <div class="result-block" style="margin-top: 40px;">
-      <h3 class="result-title">Single-Embodiment Controllability (DROID)</h3>
+    <div class="result-block">
+      <h3 class="result-title">Single-Embodiment Controllability</h3>
       <p class="result-desc">WM-UniT achieves the strongest controllability on DROID (best EPE) while improving PSNR, SSIM, and LPIPS. WM-Action does not yield a similarly reliable gain, indicating that latent tokenization alone is insufficient — visual anchoring is the key factor.</p>
       <div class="chart-container" style="overflow-x: auto;">
         <table class="data-table">
@@ -964,44 +1086,158 @@
       </div>
     </div>
 
-    <!-- Human-Humanoid Co-Training + Pre-training -->
+    <!-- Human-Humanoid Co-Training -->
     <div class="result-block">
-      <h3 class="result-title">Human-Humanoid Co-Training &amp; Pre-Training</h3>
-      <p class="result-desc">UniT provides a shared conditioning space that supports cross-embodiment dynamics modeling. Co-training on EgoDex and RoboCasa-GR1 consistently outperforms raw actions on both subsets. Pre-training on EgoDex human demonstrations further transfers physical dynamics to humanoid prediction.</p>
-      <div class="tab-bar" data-tabgroup="wm-cotrain" style="margin-top: 16px;">
-        <button class="tab-btn active" data-tab="wm-co">Human-Humanoid Co-Training</button>
-        <button class="tab-btn" data-tab="wm-pre">Human Pre-Training</button>
+      <h3 class="result-title">Human-Humanoid Controllability</h3>
+      <p class="result-desc">Co-training on EgoDex and RoboCasa-GR1 consistently outperforms raw actions on both subsets, confirming that UniT provides a shared conditioning space for cross-embodiment dynamics modeling.</p>
+      <div class="chart-container" style="overflow-x: auto;">
+        <table class="data-table">
+          <thead><tr><th>Dataset</th><th>Method</th><th>PSNR &#x2191;</th><th>SSIM &#x2191;</th><th>LPIPS &#x2193;</th><th>FVD &#x2193;</th><th>EPE &#x2193;</th></tr></thead>
+          <tbody>
+            <tr><td rowspan="2" class="method-name">EgoDex</td><td>Raw Action</td><td>24.84</td><td>0.800</td><td>0.164</td><td>171.37</td><td>0.706</td></tr>
+            <tr class="highlight-row"><td class="method-name" style="font-weight:700;color:var(--blue);">WM-UniT</td><td class="best">28.06</td><td class="best">0.858</td><td class="best">0.086</td><td class="best">130.87</td><td class="best">0.519</td></tr>
+            <tr style="height:4px;"><td colspan="7" style="border:none;"></td></tr>
+            <tr><td rowspan="2" class="method-name">RoboCasa-GR1</td><td>Raw Action</td><td>13.45</td><td>0.590</td><td>0.259</td><td>237.13</td><td>0.558</td></tr>
+            <tr class="highlight-row"><td class="method-name" style="font-weight:700;color:var(--blue);">WM-UniT</td><td class="best">17.66</td><td class="best">0.718</td><td class="best">0.142</td><td class="best">166.50</td><td class="best">0.453</td></tr>
+          </tbody>
+        </table>
       </div>
-      <div class="tab-panel active" data-tabgroup="wm-cotrain" data-tab="wm-co">
-        <div class="chart-container" style="overflow-x: auto;">
-          <table class="data-table">
-            <thead><tr><th>Dataset</th><th>Method</th><th>PSNR &#x2191;</th><th>SSIM &#x2191;</th><th>LPIPS &#x2193;</th><th>FVD &#x2193;</th><th>EPE &#x2193;</th></tr></thead>
-            <tbody>
-              <tr><td rowspan="2" class="method-name">EgoDex</td><td>Raw Action</td><td>24.84</td><td>0.800</td><td>0.164</td><td>171.37</td><td>0.706</td></tr>
-              <tr class="highlight-row"><td class="method-name" style="font-weight:700;color:var(--blue);">WM-UniT</td><td class="best">28.06</td><td class="best">0.858</td><td class="best">0.086</td><td class="best">130.87</td><td class="best">0.519</td></tr>
-              <tr style="height:4px;"><td colspan="7" style="border:none;"></td></tr>
-              <tr><td rowspan="2" class="method-name">RoboCasa-GR1</td><td>Raw Action</td><td>13.45</td><td>0.590</td><td>0.259</td><td>237.13</td><td>0.558</td></tr>
-              <tr class="highlight-row"><td class="method-name" style="font-weight:700;color:var(--blue);">WM-UniT</td><td class="best">17.66</td><td class="best">0.718</td><td class="best">0.142</td><td class="best">166.50</td><td class="best">0.453</td></tr>
-            </tbody>
-          </table>
+      <!-- Video Results for Co-Training -->
+      <div style="margin-top: 32px;">
+        <div class="tab-bar" data-tabgroup="wm-cotrain-cases">
+          <button class="tab-btn active" data-tab="wm-co-case1">Case 1</button>
+          <button class="tab-btn" data-tab="wm-co-case2">Case 2</button>
+          <button class="tab-btn" data-tab="wm-co-case3">Case 3</button>
+          <button class="tab-btn" data-tab="wm-co-case4">Case 4</button>
+        </div>
+        <div class="tab-panel active" data-tabgroup="wm-cotrain-cases" data-tab="wm-co-case1">
+          <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/human/sample_0002_traj428_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">5-Step Rollout</div>
+            </div>
+          </div>
+          <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/robot/sample_0000_traj0_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tabgroup="wm-cotrain-cases" data-tab="wm-co-case2">
+          <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/human/sample_0006_traj1284_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">4-Step Rollout</div>
+            </div>
+          </div>
+          <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/robot/sample_0019_traj545_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tabgroup="wm-cotrain-cases" data-tab="wm-co-case3">
+          <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/human/sample_0028_traj5992_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
+          <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/robot/sample_0040_traj470_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tabgroup="wm-cotrain-cases" data-tab="wm-co-case4">
+          <h4 class="wm-cotrain-heading">Human (EgoDex)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/human/sample_0023_traj4922_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
+          <h4 class="wm-cotrain-heading" style="margin-top: 16px;">Robot (RoboCasa-GR1)</h4>
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp1/robot/sample_0059_traj25_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">7-Step Rollout</div>
+            </div>
+          </div>
         </div>
       </div>
-      <div class="tab-panel" data-tabgroup="wm-cotrain" data-tab="wm-pre">
-        <div class="chart-container" style="overflow-x: auto;">
-          <table class="data-table">
-            <thead><tr><th>Configuration</th><th>PSNR &#x2191;</th><th>SSIM &#x2191;</th><th>LPIPS &#x2193;</th><th>FVD &#x2193;</th><th>EPE &#x2193;</th></tr></thead>
-            <tbody>
-              <tr><td class="method-name">WM-UniT w/o Human Pre-training</td><td>16.34</td><td>0.678</td><td>0.168</td><td>180.51</td><td>0.478</td></tr>
-              <tr class="highlight-row"><td class="method-name" style="font-weight:700;color:var(--blue);">WM-UniT (Full)</td><td class="best">18.06</td><td class="best">0.713</td><td class="best">0.135</td><td class="best">153.31</td><td class="best">0.446</td></tr>
-            </tbody>
-          </table>
+    </div>
+
+    <div class="topic-header">Human-Humanoid Transfer</div>
+
+    <!-- Human Pre-Training -->
+    <div class="result-block">
+      <h3 class="result-title">Human Pre-Training Improves Robot World Modeling</h3>
+      <p class="result-desc">Pre-training on EgoDex human demonstrations transfers physical dynamics to humanoid prediction. The dynamics learned from human data remain usable after transfer, rather than being tied to human-specific kinematics.</p>
+      <div class="chart-container" style="overflow-x: auto;">
+        <table class="data-table">
+          <thead><tr><th>Configuration</th><th>PSNR &#x2191;</th><th>SSIM &#x2191;</th><th>LPIPS &#x2193;</th><th>FVD &#x2193;</th><th>EPE &#x2193;</th></tr></thead>
+          <tbody>
+            <tr><td class="method-name">WM-UniT w/o Human Pre-training</td><td>16.34</td><td>0.678</td><td>0.168</td><td>180.51</td><td>0.478</td></tr>
+            <tr class="highlight-row"><td class="method-name" style="font-weight:700;color:var(--blue);">WM-UniT (Full)</td><td class="best">18.06</td><td class="best">0.713</td><td class="best">0.135</td><td class="best">153.31</td><td class="best">0.446</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <!-- Video Results for Pre-Training -->
+      <div style="margin-top: 32px;">
+        <div class="tab-bar" data-tabgroup="wm-pretrain-cases">
+          <button class="tab-btn active" data-tab="wm-pre-case1">Case 1</button>
+          <button class="tab-btn" data-tab="wm-pre-case2">Case 2</button>
+          <button class="tab-btn" data-tab="wm-pre-case3">Case 3</button>
+          <button class="tab-btn" data-tab="wm-pre-case4">Case 4</button>
+        </div>
+        <div class="tab-panel active" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case1">
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp2/sample_0015_traj105_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case2">
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp2/sample_0019_traj661_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case3">
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp2/sample_0028_traj922_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">9-Step Rollout</div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tabgroup="wm-pretrain-cases" data-tab="wm-pre-case4">
+          <div class="video-card wm-cotrain-wide-card">
+            <div class="video-card-inner">
+              <video src="movies/wm/exp2/sample_0033_traj627_merged.mp4" autoplay muted loop playsinline></video>
+              <div class="video-speed-badge">10-Step Rollout</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
 
     <!-- Cross-Embodiment Conditioning Evaluation -->
     <div class="result-block">
-      <h3 class="result-title">Cross-Embodiment Conditioning Consistency</h3>
+      <h3 class="result-title">Human-Humanoid Conditioning Consistency</h3>
       <p class="result-desc">We directly test whether UniT tokens from one embodiment can condition video generation for the other — without any domain-specific adaptation. Gemini-3-Pro scores semantic, temporal, and geometric consistency (1–5). UniT preserves fine-grained action semantics, magnitude sensitivity, and temporal coherence across embodiments.</p>
       <div class="chart-container" style="overflow-x: auto;">
         <table class="data-table">
@@ -1014,6 +1250,95 @@
             <tr class="highlight-row"><td class="method-name" style="font-weight:700;color:var(--blue);">WM-UniT</td><td class="best">3.28</td><td class="best">3.43</td><td class="best">3.09</td><td class="best">3.27</td></tr>
           </tbody>
         </table>
+      </div>
+      <!-- Video Results for Cross-Embodiment Consistency -->
+      <div style="margin-top: 32px;">
+        <div class="tab-bar" data-tabgroup="wm-cross-dir">
+          <button class="tab-btn active" data-tab="wm-h2r">Human &#x2192; Robot</button>
+          <button class="tab-btn" data-tab="wm-r2h">Robot &#x2192; Human</button>
+        </div>
+        <div class="tab-panel active" data-tabgroup="wm-cross-dir" data-tab="wm-h2r">
+          <p class="perf-tab-desc">WM-UniT consistently outperforms Raw Action in semantic, temporal, and geometric consistency (<span class="inline-result">3.28 / 3.43 / 3.09</span> vs. 2.98 / 3.16 / 2.72), confirming that UniT preserves fine-grained action intent across embodiments.</p>
+          <div class="tab-bar" data-tabgroup="wm-h2r-cases">
+            <button class="tab-btn active" data-tab="wm-h2r-case1">Case 1</button>
+            <button class="tab-btn" data-tab="wm-h2r-case2">Case 2</button>
+            <button class="tab-btn" data-tab="wm-h2r-case3">Case 3</button>
+            <button class="tab-btn" data-tab="wm-h2r-case4">Case 4</button>
+          </div>
+          <div class="tab-panel active" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case1">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/human2robot/pair_054_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case2">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/human2robot/pair_073_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case3">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/human2robot/pair_082_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case4">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/human2robot/pair_091_Gr1_x_EgodexWrist_human2robot.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tab-panel" data-tabgroup="wm-cross-dir" data-tab="wm-r2h">
+          <p class="perf-tab-desc">WM-UniT achieves stronger consistency across all three dimensions (<span class="inline-result">3.91 / 3.98 / 3.66</span> vs. 2.96 / 3.12 / 2.74), with the largest gain in geometric fidelity.</p>
+          <div class="tab-bar" data-tabgroup="wm-r2h-cases">
+            <button class="tab-btn active" data-tab="wm-r2h-case1">Case 1</button>
+            <button class="tab-btn" data-tab="wm-r2h-case2">Case 2</button>
+            <button class="tab-btn" data-tab="wm-r2h-case3">Case 3</button>
+            <button class="tab-btn" data-tab="wm-r2h-case4">Case 4</button>
+          </div>
+          <div class="tab-panel active" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case1">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/robot2human/pair_093_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case2">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/robot2human/pair_098_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case3">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/robot2human/pair_108_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+          <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case4">
+            <div class="video-card wm-cotrain-wide-card">
+              <div class="video-card-inner">
+                <video src="movies/wm/exp3/robot2human/pair_121_Gr1_x_EgodexWrist_robot2human.mp4" autoplay muted loop playsinline></video>
+                <div class="video-speed-badge">5-Step Rollout</div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -1032,11 +1357,13 @@
     </div>
 
     <div class="tab-panel active" data-tabgroup="ablation" data-tab="abl-ood">
+      <p class="perf-tab-desc">VLA-UniT (<span class="inline-result">49.9%</span> OOD) outperforms both single-modality variants. Removing cross-reconstruction drops to <span class="inline-result">30.3%</span> — the <span class="inline-result">19.6%</span> gap confirms explicit alignment is the key enabler.</p>
       <div class="chart-container"><canvas id="chart-ablation-ood"></canvas></div>
       <div class="callout callout-blue"><strong>Cross-Reconstruction Is Essential.</strong> Removing cross-reconstruction drops OOD from 49.9% to 30.3% — below even single-modality variants — showing that multi-modal input alone does not guarantee alignment. The 19.6% gain confirms explicit cross-modal alignment is the key enabler for human-to-humanoid transfer.</div>
     </div>
 
     <div class="tab-panel" data-tabgroup="ablation" data-tab="abl-indomain">
+      <p class="perf-tab-desc">VLA-UniT (<span class="inline-result">66.8%</span>) outperforms VLA-Villa (<span class="inline-result">63.1%</span>), confirming that bidirectional cross-reconstruction is more effective than unidirectional V2A alternatives.</p>
       <div class="chart-container"><canvas id="chart-ablation-indomain"></canvas></div>
       <div class="callout callout-blue"><strong>Bidirectional Cross-Reconstruction.</strong> VLA-UniT (66.8%) outperforms VLA-Villa (63.1%), which uses unidirectional V2A reconstruction, confirming that bidirectional alignment is more effective.</div>
     </div>
@@ -1111,7 +1438,7 @@
     <div class="citation-block"><button class="copy-btn" onclick="copyBib()">Copy</button>@article{unit2026,
   title={UniT: Toward a Unified Physical Language for Human-to-Humanoid Policy Learning and World Modeling},
   author={},
-  journal={NeurIPS},
+  journal={arXiv preprint},
   year={2026}
 }</div>
   </div>
@@ -1577,17 +1904,52 @@ const chartTitle = (text) => ({
 
 /* ═══════════ Real Robot OOD ═══════════ */
 (() => {
-  const labels = ['Background\nTransfer','Target\nTransfer','Distractor\nTransfer','Geometry\nTransfer','Combinational\nTransfer'];
-  const ns = [30,20,30,30,10];
-  const groot = [20,20,10,0,30], robot = [33.33,45,26.67,23.33,20], human = [73.33,65,60,63.33,70];
+  const labels = ['Geometry\nTransfer','Distractor\nTransfer','Target\nTransfer','Background\nTransfer','Combinational\nTransfer'];
+  const prefixes = ['Geometry','Distractor','Target','Background','Combination'];
+  const ns = [30,30,20,30,10];
+  const groot = [0,10,20,20,30], robot = [23.33,26.67,45,33.33,20], human = [63.33,60,65,73.33,70];
+
+  const oodLabelPlugin = {
+    id: 'oodLabels',
+    afterDraw(chart) {
+      const ctx = chart.ctx, xs = chart.scales.x, ys = chart.scales.y;
+      const pad = xs.options.ticks.padding || 3;
+      const lh = 13.2;
+      ctx.save();
+      ctx.textAlign = 'center';
+      ctx.textBaseline = 'top';
+      prefixes.forEach((word, idx) => {
+        const cx = xs.getPixelForValue(idx);
+        const y0 = ys.bottom + pad;
+        /* line 1: category word — bold blue */
+        ctx.font = '700 11px Inter, sans-serif';
+        ctx.fillStyle = C.blue;
+        ctx.fillText(word, cx, y0);
+        /* line 2: "Transfer" — normal gray */
+        ctx.font = '400 11px Inter, sans-serif';
+        ctx.fillStyle = '#555';
+        ctx.fillText('Transfer', cx, y0 + lh);
+      });
+      ctx.restore();
+    }
+  };
+
   new Chart(document.getElementById('chart-real-ood'), {
     type: 'bar',
+    plugins: [oodLabelPlugin],
     data: { labels, datasets: [
       { label: 'GR00T', data: groot, backgroundColor: '#A8D5E2', borderColor: 'rgba(0,0,0,0.08)', borderWidth: 0.5, borderRadius: 5, errorBars: groot.map((v,i) => se(v/100,ns[i])*100) },
       { label: 'VLA-UniT w/o Human', data: robot, backgroundColor: C.blue, borderColor: 'rgba(0,0,0,0.08)', borderWidth: 0.5, borderRadius: 5, errorBars: robot.map((v,i) => se(v/100,ns[i])*100) },
       { label: 'VLA-UniT w/ Human', data: human, backgroundColor: C.yellow, borderColor: 'rgba(0,0,0,0.08)', borderWidth: 0.5, borderRadius: 5, errorBars: human.map((v,i) => se(v/100,ns[i])*100) }
     ]},
-    options: { responsive: true, plugins: { legend: { position: 'top', labels: { font: { size: 10 } } }, title: chartTitle('Real Robot — OOD Generalization') }, scales: scaleOpts(100) }
+    options: {
+      responsive: true,
+      plugins: { legend: { position: 'top', labels: { font: { size: 10 } } }, title: chartTitle('Real Robot — OOD Generalization') },
+      scales: {
+        ...scaleOpts(100),
+        x: { grid: { display: false }, ticks: { color: 'transparent', font: { size: 11 } } }
+      }
+    }
   });
 })();
 
@@ -2030,6 +2392,28 @@ window.addEventListener('scroll', () => {
     l.style.fontWeight = active ? '600' : '';
   });
 });
+
+/* ── Hero video sync (VLA + WM pairs) ── */
+(() => {
+  function syncPair(idA, idB) {
+    const a = document.getElementById(idA);
+    const b = document.getElementById(idB);
+    if (!a || !b) return;
+    function drift() {
+      if (Math.abs(a.currentTime - b.currentTime) > 0.15) b.currentTime = a.currentTime;
+    }
+    a.addEventListener('seeked', drift);
+    a.addEventListener('play', () => { b.currentTime = a.currentTime; b.play(); });
+    a.addEventListener('pause', () => b.pause());
+    setInterval(drift, 500);
+    a.addEventListener('ended', () => { a.currentTime = 0; b.currentTime = 0; a.play(); b.play(); });
+    b.addEventListener('ended', () => { b.currentTime = 0; a.currentTime = 0; });
+  }
+  syncPair('vla-hero-human', 'vla-hero-robot');
+  syncPair('wm-hero-human', 'wm-hero-robot');
+})();
+
+
 </script>
 
 </body>
