@@ -24,6 +24,11 @@
       --radius: 10px;
       --max-w: 720px;
       --max-w-wide: 960px;
+      /* ── Configurable video crop parameters ── */
+      --id-crop-w: 0.85;          /* In-domain: keep center 85% width */
+      --ood-robot-crop-h: 0.80;   /* OOD Robot Demo: keep bottom 80% height */
+      --ood-robot-crop-w: 0.80;   /* OOD Robot Demo: keep 80% width (banana left / bowl right) */
+      --ood-exec-crop-w: 0.95;    /* OOD Execution: keep center 95% width */
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
     html { scroll-behavior: smooth; }
@@ -205,6 +210,30 @@
     .ood-arrow-line { width: 100%; height: 0; border-top: 1.5px dashed var(--border); position: relative; }
     .ood-arrow-line::after { content: ''; position: absolute; right: -1px; top: -4.5px; border-left: 7px solid var(--text-light); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: 0.5; }
     .ood-arrow-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); white-space: nowrap; background: var(--bg); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border); }
+
+    /* ── Video crop (fill, no black bars; configurable via :root vars) ── */
+    /* In-domain: crop sides to center var(--id-crop-w) width */
+    .tab-panel[data-tab="real-indomain"] .real-video-card video {
+      object-fit: cover;
+      aspect-ratio: calc(4 * var(--id-crop-w)) / 3;
+    }
+    /* OOD col-1 Robot Demo: crop top (keep bottom var(--ood-robot-crop-h))
+       + crop sides (banana keep left var(--ood-robot-crop-w), bowl keep right) */
+    .ood-zone--train .robot-demo-card video {
+      object-fit: cover;
+      aspect-ratio: calc(16 * var(--ood-robot-crop-w)) / calc(9 * var(--ood-robot-crop-h));
+    }
+    .ood-zone--train .robot-demo-card video[data-src$="robot-banana.mp4"] {
+      object-position: left bottom;
+    }
+    .ood-zone--train .robot-demo-card video[data-src$="robot-bowl-1.mp4"] {
+      object-position: right bottom;
+    }
+    /* OOD col-3 Execution: crop sides to center var(--ood-exec-crop-w) width */
+    .ood-zone--exec .real-video-card video {
+      object-fit: cover;
+      aspect-ratio: calc(4 * var(--ood-exec-crop-w)) / 3;
+    }
 
     /* Results */
     .result-block { margin-bottom: 56px; }
@@ -436,7 +465,7 @@
     <p class="section-subtitle">UniT functions as a cross-modal information bottleneck: it concurrently extracts temporal-visual, kinematic, and fused visuo-motor features, and enforces rigorous cross-reconstruction to distill the embodiment-agnostic physical intent.</p>
     <figure class="method-figure">
       <video data-src="method.mp4?v=1776341418" loop muted playsinline style="width: 100%; display: block;"></video>
-      <figcaption><strong>Architecture of UniT.</strong> Cross-embodiment vision pairs (O<sub>t</sub>, O<sub>t+k</sub>) and action chunks A<sub>t:t+k</sub> are encoded into vision, action, and fused features via tri-branch encoders. A shared RQ-VAE codebook quantizes all three branches into a unified discrete space. Both vision and action decoders reconstruct from these shared tokens, enforcing cross-reconstruction alignment.</figcaption>
+      <figcaption><strong>Architecture of UniT.</strong> Cross-embodiment vision pairs (o<sub>t</sub>, o<sub>t+k</sub>) and action chunks a<sub>t:t+k</sub> are encoded into vision, action, and fused features via tri-branch encoders. A shared RQ-VAE codebook quantizes all three branches into a unified discrete space. Both vision and action decoders reconstruct from these shared tokens, enforcing cross-reconstruction alignment.</figcaption>
     </figure>
     <div class="method-steps">
       <div class="method-step"><div class="step-num">1</div><h4>Tri-Branch Encoding</h4><p><strong>Visual branch</strong> (IDM on frozen DINOv2 features) captures physical transitions.<br><strong>Action branch</strong> encodes embodiment-specific state and action chunks via per-embodiment MLPs.<br><strong>Fusion branch</strong> integrates both into a compact visuo-motor representation.</p></div>
