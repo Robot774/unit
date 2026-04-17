@@ -26,8 +26,8 @@
       --max-w-wide: 960px;
       /* ── Configurable video crop parameters ── */
       --id-crop-w: 0.85;          /* In-domain: keep center 85% width */
-      --ood-robot-crop-h: 0.80;   /* OOD Robot Demo: keep bottom 80% height */
-      --ood-robot-crop-w: 0.80;   /* OOD Robot Demo: keep 80% width (banana left / bowl right) */
+      --ood-robot-crop-w: 0.85;   /* OOD Robot Demo: keep 85% width (banana left / bowl right) */
+      --ood-robot-crop-h: 0.75;   /* OOD Robot Demo: keep bottom 75% height */
       --ood-exec-crop-w: 0.95;    /* OOD Execution: keep center 95% width */
     }
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -217,25 +217,34 @@
       object-fit: cover;
       aspect-ratio: calc(4 * var(--id-crop-w)) / 3;
     }
-    /* OOD col-1 Robot Demo: show only the bottom 80% × 80% of source.
-       Display aspect ratio unchanged (16:9). Source is not altered — we scale
-       the video up by 1 / crop-w and clip with overflow:hidden; transform-origin
-       selects which 80%×80% region remains visible. */
-    .ood-zone--train .robot-demo-card .video-card-inner { overflow: hidden; }
+    /* OOD col-1 Robot Demo: show a sub-region of source (banana → bottom-left,
+       bowl → bottom-right), preserving source aspect ratio (no distortion).
+       Independent width/height crop ratios via --ood-robot-crop-w/-h.
+       The clip container adopts the sub-region aspect ratio so height stays
+       fixed (160px) and rows remain aligned; the video inside is sized
+       larger by 1/crop factors so only the requested sub-region is visible. */
+    .ood-zone--train .robot-demo-card .video-card-inner {
+      position: relative;
+      overflow: hidden;
+      height: 160px;
+      aspect-ratio: calc(16 * var(--ood-robot-crop-w)) / calc(9 * var(--ood-robot-crop-h));
+    }
     .ood-zone--train .robot-demo-card video {
-      aspect-ratio: 16 / 9;
-      transform: scale(calc(1 / var(--ood-robot-crop-w)));
+      position: absolute;
+      height: calc(100% / var(--ood-robot-crop-h));
+      width: calc(100% / var(--ood-robot-crop-w));
+      aspect-ratio: auto;      /* override base rule */
+      object-fit: fill;        /* size matches source 16:9 → no distortion */
     }
     /* Match both pre-load (data-src) and post-load (src) states, since the
        lazy loader removes data-src after setting src. */
     .ood-zone--train .robot-demo-card video[data-src$="robot-banana.mp4"],
     .ood-zone--train .robot-demo-card video[src$="robot-banana.mp4"] {
-      transform: scale(calc(1 / 0.6));
-      transform-origin: left bottom;
+      left: 0; bottom: 0;
     }
     .ood-zone--train .robot-demo-card video[data-src$="robot-bowl-1.mp4"],
     .ood-zone--train .robot-demo-card video[src$="robot-bowl-1.mp4"] {
-      transform-origin: right bottom;
+      right: 0; bottom: 0;
     }
     /* OOD col-3 Execution: crop sides to center var(--ood-exec-crop-w) width */
     .ood-zone--exec .real-video-card video {
