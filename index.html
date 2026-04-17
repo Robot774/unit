@@ -51,14 +51,15 @@
     .section { padding: 80px 24px; }
     .container { max-width: var(--max-w); margin: 0 auto; }
     .container-wide { max-width: var(--max-w-wide); margin: 0 auto; }
-    .section-label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 12px; }
+    .section-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 12px; }
     .section-title { font-size: 28px; font-weight: 700; line-height: 1.25; letter-spacing: -0.5px; margin-bottom: 16px; }
-    .section-subtitle { font-size: 16px; color: var(--text-muted); line-height: 1.625; }
+    .section-subtitle { font-size: 16px; color: var(--text); line-height: 1.625; margin-bottom: 16px; }
+    .section-subtitle:last-of-type { margin-bottom: 0; }
 
     /* Hero */
     .hero { padding: 80px 24px 48px; text-align: center; }
-    .hero-title { font-size: 42px; font-weight: 700; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
-    .hero-sub { font-size: 15px; color: var(--text-light); margin-bottom: 12px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+    .hero-title { font-size: 40px; font-weight: 700; line-height: 1.15; letter-spacing: -1px; margin-bottom: 16px; }
+    .hero-sub { font-size: 16px; color: var(--text-light); margin-bottom: 12px; max-width: 640px; margin-left: auto; margin-right: auto; line-height: 1.7; }
     .hero-proposition { font-size: 18px; color: var(--text); font-weight: 500; margin-bottom: 32px; max-width: 660px; margin-left: auto; margin-right: auto; line-height: 1.6; letter-spacing: -0.2px; }
     .hero-proposition strong { font-weight: 700; }
     .hero-links { display: flex; justify-content: center; gap: 12px; margin-bottom: 40px; }
@@ -81,7 +82,7 @@
     .cmp-bad { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10' fill='%23f8d7da' stroke='%23cc4444' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='9' r='1.2' fill='%23cc4444'/%3E%3Ccircle cx='14' cy='9' r='1.2' fill='%23cc4444'/%3E%3Cpath d='M7 15.5Q11 12 15 15.5' fill='none' stroke='%23cc4444' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E"); }
     .cmp-mid { background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='22' height='22' viewBox='0 0 22 22'%3E%3Ccircle cx='11' cy='11' r='10' fill='%23fff3cd' stroke='%23d4a017' stroke-width='1.5'/%3E%3Ccircle cx='8' cy='9' r='1.2' fill='%23d4a017'/%3E%3Ccircle cx='14' cy='9' r='1.2' fill='%23d4a017'/%3E%3Cline x1='7.5' y1='14' x2='14.5' y2='14' stroke='%23d4a017' stroke-width='1.3' stroke-linecap='round'/%3E%3C/svg%3E"); }
     .insight-box { margin-top: 36px; padding: 24px 28px; border-left: 3px solid var(--text); border-radius: 0 var(--radius) var(--radius) 0; }
-    .insight-box .label { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 8px; }
+    .insight-box .label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 1.5px; color: var(--text-light); margin-bottom: 8px; }
     .insight-box p { font-size: 16px; line-height: 1.625; }
     .insight-box em { font-style: italic; font-weight: 600; }
 
@@ -119,7 +120,7 @@
     .legend-dot.humanoid { background: #5B8DC9; }
     .legend-dot.human { background: #F5D76E; }
     .tsne-tab-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 20px; line-height: 1.7; }
-    .tsne-conclusion { margin-top: 40px; padding: 24px 28px; background: var(--accent-light); border: 1px solid var(--border); border-radius: var(--radius); font-size: 14px; line-height: 1.625; color: var(--text-muted); text-align: center; }
+    .tsne-conclusion { margin-top: 40px; padding: 24px 28px; background: var(--accent-light); border: 1px solid var(--border); border-radius: var(--radius); font-size: 16px; line-height: 1.625; color: var(--text); text-align: center; }
     .tsne-conclusion strong { color: var(--text); }
 
     /* Branching layout */
@@ -203,13 +204,43 @@
     .step-num--ref { background: var(--accent-light); color: var(--text-muted); border: 1.5px solid var(--border); }
     .step-num--human { background: rgba(245,215,110,0.25); color: #b8860b; border: 1.5px solid rgba(245,215,110,0.5); }
     .step-num--result { background: var(--text); color: var(--bg); }
-    .ood-zone .video-speed-badge { top: 6px; bottom: auto; font-size: 9px; padding: 2px 7px; }
+    .ood-zone .video-speed-badge { top: 6px; bottom: auto; font-size: 10px; padding: 2px 7px; }
     .ood-combi-placeholder { display: flex; align-items: center; justify-content: center; border-radius: 8px; border: 2px dashed var(--border); background: var(--accent-light); padding: 32px 20px; text-align: center; font-size: 13px; color: var(--text-light); line-height: 1.6; }
     /* Zone separator arrow */
     .ood-zone-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; min-width: 48px; gap: 5px; }
     .ood-arrow-line { width: 100%; height: 0; border-top: 1.5px dashed var(--border); position: relative; }
     .ood-arrow-line::after { content: ''; position: absolute; right: -1px; top: -4.5px; border-left: 7px solid var(--text-light); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: 0.5; }
-    .ood-arrow-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); white-space: nowrap; background: var(--bg); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border); }
+    .ood-arrow-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); white-space: nowrap; background: var(--bg); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border); }
+
+    /* ── Cross-Conditioning layout (ref ⇒ start frame ⇒ transfers) ── */
+    .crosscond-layout { display: flex; gap: 8px; justify-content: center; align-items: stretch; flex-wrap: nowrap; width: calc(100% + 480px); margin-left: -240px; margin-right: -240px; }
+    .crosscond-zone { border-radius: var(--radius); padding: 14px 12px; display: flex; flex-direction: column; flex-shrink: 0; }
+    .crosscond-zone--human { background: rgba(245,215,110,0.04); border: 1.5px solid rgba(196,144,0,0.18); }
+    .crosscond-zone--robot { background: rgba(91,141,201,0.03); border: 1.5px solid rgba(91,141,201,0.12); }
+    .crosscond-zone--start { background: var(--accent-light); border: 1.5px dashed var(--border); }
+    .crosscond-zone-label { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 10px; text-align: center; }
+    .crosscond-zone--human .crosscond-zone-label { color: rgba(184,134,11,0.65); }
+    .crosscond-zone--robot .crosscond-zone-label { color: rgba(91,141,201,0.60); }
+    .crosscond-zone--start .crosscond-zone-label { color: var(--text-light); }
+    .crosscond-clip { position: relative; overflow: hidden; height: 170px; aspect-ratio: 336 / 192; border: 1px solid var(--border); border-radius: 6px; background: #000; }
+    .crosscond-clip video { position: absolute; top: 0; left: 0; height: 100%; width: 300%; aspect-ratio: auto; object-fit: fill; display: block; }
+    .crosscond-clip[data-part="ref"]  video { left: 0; }
+    .crosscond-clip[data-part="gen1"] video { left: -100%; }
+    .crosscond-clip[data-part="gen2"] video { left: -200%; }
+    .crosscond-transfer-grid { display: flex; gap: 8px; }
+    .crosscond-transfer-item { display: flex; flex-direction: column; align-items: stretch; }
+    .crosscond-method-label { font-size: 11px; font-weight: 700; text-align: center; margin-top: 8px; padding: 4px 8px; letter-spacing: 0.3px; border-radius: 6px; background: var(--accent-light); color: var(--text-light); }
+    .crosscond-method-label--unit { color: var(--blue); background: rgba(91,141,201,0.10); border: 1px solid rgba(91,141,201,0.22); }
+    .crosscond-method-label--baseline { color: var(--text-light); background: var(--accent-light); border: 1px solid var(--border); }
+    .crosscond-method-spacer { margin-top: 8px; height: 22px; border: 1px solid transparent; }
+    .crosscond-startframe { height: 170px; aspect-ratio: 336 / 192; border: 1.5px dashed var(--border); border-radius: 6px; background: repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0 6px, transparent 6px 12px), var(--bg); display: flex; align-items: center; justify-content: center; color: var(--text-light); font-size: 11px; letter-spacing: 0.5px; text-align: center; padding: 0; overflow: hidden; }
+    .crosscond-startframe img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    .crosscond-arrow { display: flex; flex-direction: column; align-items: center; justify-content: center; flex-shrink: 0; min-width: 134px; gap: 4px; padding-top: 26px; }
+    .crosscond-arrow--short { min-width: 34px; }
+    .crosscond-arrow-line { width: 100%; height: 0; border-top: 1.5px dashed var(--border); position: relative; }
+    .crosscond-arrow-line::after { content: ''; position: absolute; right: -1px; top: -4.5px; border-left: 7px solid var(--text-light); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: 0.55; }
+    .crosscond-arrow-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.4px; color: var(--text-light); text-align: center; line-height: 1.2; background: var(--bg); padding: 3px 8px; border-radius: 8px; border: 1px solid var(--border); max-width: 134px; }
+    .crosscond-caption { font-size: 11px; color: var(--text-light); text-align: center; margin-top: 6px; line-height: 1.3; }
 
     /* ── Video crop (fill, no black bars; configurable via :root vars) ── */
     /* In-domain: crop sides to center var(--id-crop-w) width */
@@ -255,11 +286,11 @@
     /* Results */
     .result-block { margin-bottom: 56px; }
     .result-block:last-child { margin-bottom: 0; }
-    .result-title { font-size: 19px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.2px; }
-    .result-takeaway { font-size: 13px; color: var(--text-light); margin-bottom: 16px; font-style: italic; letter-spacing: 0.1px; }
+    .result-title { font-size: 18px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.2px; }
+    .result-takeaway { font-size: 12px; color: var(--text-light); margin-bottom: 16px; font-style: italic; letter-spacing: 0.1px; }
     .result-takeaway strong { color: var(--text-muted); font-style: normal; }
-    .topic-header { font-size: 24px; font-weight: 700; color: var(--text); margin: 64px 0 24px; letter-spacing: -0.4px; line-height: 1.3; padding-left: 16px; border-left: 3px solid var(--text); }
-    .result-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; line-height: 1.625; }
+    .topic-header { font-size: 22px; font-weight: 700; color: var(--text); margin: 64px 0 24px; letter-spacing: -0.4px; line-height: 1.3; padding-left: 16px; border-left: 3px solid var(--text); }
+    .result-desc { font-size: 16px; color: var(--text); margin-bottom: 24px; line-height: 1.625; }
     .chart-container { background: var(--bg); border: 1px solid var(--border); border-radius: var(--radius); padding: 24px; margin-bottom: 16px; }
     .chart-container canvas { max-height: 400px; }
     .tab-bar[data-tabgroup="perf"] .tab-btn { font-size: 14px; font-weight: 700; padding: 10px 24px; letter-spacing: -0.2px; }
@@ -297,7 +328,7 @@
     .hero-arrow-line { width: 100%; height: 0; border-top: 1.5px dashed rgba(0,0,0,0.12); position: relative; }
     .hero-arrow-line::after { content: ''; position: absolute; right: -1px; top: -4.5px; border-left: 7px solid var(--text-light); border-top: 4px solid transparent; border-bottom: 4px solid transparent; opacity: 0.5; }
     .hero-arrow-line::before { content: ''; position: absolute; top: -3px; left: 0; width: 6px; height: 6px; border-radius: 50%; background: var(--blue); box-shadow: 0 0 6px rgba(91,141,201,0.6); animation: arrowFlow 2s ease-in-out infinite; }
-    .hero-arrow-label { font-size: 9px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); white-space: nowrap; background: var(--bg); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border); }
+    .hero-arrow-label { font-size: 10px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; color: var(--text-light); white-space: nowrap; background: var(--bg); padding: 2px 10px; border-radius: 10px; border: 1px solid var(--border); }
 
     /* Callouts */
     .callout { padding: 20px 24px; border-radius: var(--radius); margin: 24px 0; font-size: 16px; line-height: 1.625; }
@@ -387,7 +418,7 @@
           </div>
           <div style="padding: 20px; display: flex; align-items: flex-start; justify-content: center; gap: 0;">
             <div style="text-align: center; flex: 1; min-width: 0;">
-              <div style="font-size: 11px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Human Demonstration</div>
+              <div style="font-size: 10px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Human Demonstration</div>
               <div class="video-card" style="border-color: rgba(91,141,201,0.15); background: rgba(91,141,201,0.03);">
                 <div class="video-card-inner"><video id="vla-hero-human" src="movies/real/zero-shot/stack-teaser-web.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
                 <div class="video-card-instruction" style="background: rgba(91,141,201,0.06);">Stack the <strong style="color:var(--blue);">green bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
@@ -398,7 +429,7 @@
               <div class="hero-arrow-label">Zero-Shot</div>
             </div>
             <div style="text-align: center; flex: 1; min-width: 0;">
-              <div style="font-size: 11px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Robot Zero-Shot Execution</div>
+              <div style="font-size: 10px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Robot Zero-Shot Execution</div>
               <div class="video-card" style="border-color: rgba(196,144,0,0.15); background: rgba(245,215,110,0.04);">
                 <div class="video-card-inner"><video id="vla-hero-robot" src="movies/real/zero-shot/robot_stack_web.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
                 <div class="video-card-instruction" style="background: rgba(245,215,110,0.06);">Stack the <strong style="color:var(--blue);">blue bowl</strong> on the <strong style="color:var(--blue);">red bowl</strong></div>
@@ -417,7 +448,7 @@
           </div>
           <div style="padding: 20px; display: flex; align-items: flex-start; justify-content: center; gap: 0;">
             <div style="text-align: center; flex: 1; min-width: 0;">
-              <div style="font-size: 11px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Human Conditioning</div>
+              <div style="font-size: 10px; font-weight: 700; color: rgba(91,141,201,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Human Conditioning</div>
               <div class="video-card" style="border-color: rgba(91,141,201,0.15); background: rgba(91,141,201,0.03);">
                 <div class="video-card-inner"><video id="wm-hero-human" src="movies/wm/zero-shot/human.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
                 <div class="video-card-instruction" style="background: rgba(91,141,201,0.06); visibility: hidden;">&nbsp;</div>
@@ -428,7 +459,7 @@
               <div class="hero-arrow-label">Zero-Shot</div>
             </div>
             <div style="text-align: center; flex: 1; min-width: 0;">
-              <div style="font-size: 11px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Robot Generated Video</div>
+              <div style="font-size: 10px; font-weight: 700; color: rgba(184,134,11,0.7); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px;">Robot Generated Video</div>
               <div class="video-card" style="border-color: rgba(196,144,0,0.15); background: rgba(245,215,110,0.04);">
                 <div class="video-card-inner"><video id="wm-hero-robot" src="movies/wm/zero-shot/robot.mp4" autoplay muted loop playsinline style="width: 100%; display: block; aspect-ratio: auto; object-fit: contain;"></video></div>
                 <div class="video-card-instruction" style="background: rgba(245,215,110,0.06); visibility: hidden;">&nbsp;</div>
@@ -507,7 +538,8 @@
   <div class="container-wide">
     <div class="section-label">The Unified Space</div>
     <h2 class="section-title">Does UniT Actually Create a Shared Manifold?</h2>
-    <p class="section-subtitle">We perform t-SNE analysis on human (EgoDex) and humanoid (RoboCasa GR1) samples to verify that UniT establishes a unified physical language — and that this alignment propagates into both downstream model internals.</p>
+    <p class="section-subtitle">Before looking at downstream task performance, we verify whether UniT does what it claims: project heterogeneous human and humanoid actions into a shared latent space, and propagate that alignment into the internals of downstream models. We perform t-SNE analysis on samples drawn from the RoboCasa GR1 and EgoDex co-training mixture, at three levels &mdash; raw actions vs.&nbsp;UniT token embeddings, VLA vision-language features, and WM cross-attention context embeddings.</p>
+    <p class="section-subtitle">Downstream baselines share architectures with our UniT variants but consume raw actions: <strong>GR00T-Qwen2.5-FT</strong> for policy learning (Qwen2.5-VL backbone with the core language modeling blocks fine-tuned to predict raw actions) and <strong>Cosmos Predict 2.5</strong> with raw action conditioning for world modeling. Both baselines are trained on the same human-humanoid mixture.</p>
     <!-- ── Layer 1: Token-Level (root) ── -->
     <div class="branch-root">
       <h3 class="branch-root-title">Representation Alignment</h3>
@@ -562,9 +594,11 @@
   <div class="container-wide">
     <div class="section-label">Downstream Paradigm I</div>
     <h2 class="section-title">Policy Learning: From Data Efficiency to Zero-Shot Transfer</h2>
-    <p class="section-subtitle">UniT token prediction provides the VLM with a compact, visually-anchored learning objective that encodes physical intent. We evaluate on the RoboCasa GR1 benchmark (24 tabletop tasks, 50 episodes each) and a real-world full-body humanoid (IRON-R01-1.11, 50-DoF).</p>
+    <p class="section-subtitle">UniT token prediction gives the VLM a compact, visually-anchored prediction target that encodes physical intent, replacing direct action regression inside the learning loop. A lightweight flow head then decodes the predicted tokens into embodiment-specific actions for execution.</p>
+    <p class="section-subtitle">We evaluate VLA-UniT along two axes: <strong>efficiency</strong> &mdash; benchmark performance and sample efficiency on the RoboCasa GR1 simulation benchmark &mdash; and <strong>human-to-humanoid transfer</strong>, which leverages EgoDex human demonstrations to improve policy learning, validated both in simulation and on the real-world IRON-R01-1.11 humanoid (50-dimensional action space).</p>
 
     <div class="topic-header" style="margin-top: 40px;">Efficiency</div>
+    <p class="result-desc">We evaluate VLA-UniT on the <strong>RoboCasa GR1</strong> simulation benchmark along two protocols: <strong>full-data benchmark performance</strong> against a broad set of policy baselines, and <strong>reduced-data sample efficiency</strong> against the matched GR00T architecture. Both probe whether compact, visually-anchored token prediction extracts task-relevant intent more effectively than direct action regression.</p>
 
     <!-- Benchmark + Data Efficiency — tab switched -->
     <div class="result-block">
@@ -573,11 +607,11 @@
         <button class="tab-btn" data-tab="perf-eff">10x Data Efficiency</button>
       </div>
       <div class="tab-panel active" data-tabgroup="perf" data-tab="perf-bench">
-        <p class="perf-tab-desc">VLA-UniT achieves <span class="inline-result">66.7%</span> overall success rate on RoboCasa GR1, surpassing FLARE (<span class="inline-result">+11.7%</span>) and the GR00T baseline (<span class="inline-result">+18.9%</span>).</p>
+        <p class="perf-tab-desc">VLA-UniT reaches <span class="inline-result">66.7%</span> overall success rate on the full-data RoboCasa GR1 benchmark, balanced across Pick &amp; Place (<span class="inline-result">67.3%</span>) and Articulated (<span class="inline-result">64.7%</span>). It surpasses the previous best FLARE by <span class="inline-result">+11.7%</span>, and the GR00T baseline &mdash; which shares the same architecture without UniT token prediction &mdash; by <span class="inline-result">+18.9%</span>.</p>
         <div class="chart-container"><canvas id="chart-benchmark"></canvas></div>
       </div>
       <div class="tab-panel" data-tabgroup="perf" data-tab="perf-eff">
-        <p class="perf-tab-desc">With only <strong>10%</strong> of training data, VLA-UniT (<span class="inline-result">45.5%</span>) already approaches GR00T trained on full data (<span class="inline-result">47.8%</span>).</p>
+        <p class="perf-tab-desc">With only <strong>10%</strong> of the training data (100 trajectories per task), VLA-UniT (<span class="inline-result">45.5%</span>) already approaches the GR00T baseline trained on full data (<span class="inline-result">47.8%</span>) &mdash; roughly a <strong>10&times;</strong> reduction in data requirements. Operating in a structured discrete latent space, rather than regressing raw actions, lets the VLM extract task-relevant intent more efficiently from limited demonstrations.</p>
         <div class="chart-container"><canvas id="chart-efficiency"></canvas></div>
       </div>
 
@@ -645,7 +679,8 @@
     <!-- Human Data -->
     <div class="result-block">
       <h3 class="result-title">Human Data Unlocks Generalization</h3>
-      <p class="result-desc">Under the few-shot regime, we co-train VLA-UniT on robot data and EgoDex human demonstrations (27,419 pick-and-place trajectories), then fine-tune on robot data alone. Human data brings consistent improvements across both in-domain and all three OOD scenarios.</p>
+      <p class="result-desc">Under the few-shot regime in simulation, we co-train VLA-UniT on robot data and EgoDex's <code>basic_pick_place</code> human demonstrations (27,419 trajectories), then fine-tune on robot data alone &mdash; testing whether UniT's shared latent space lets humanoid policy learning actually draw on human data.</p>
+      <p class="result-desc">Incorporating human data brings consistent improvements across both in-domain and all three OOD categories. The in-domain average rises from <span class="inline-result">45.5% &rarr; 50.0%</span>, with the largest gain in Pick &amp; Place (<span class="inline-result">41.7% &rarr; 49.4%</span>) &mdash; exactly the setting that corresponds to the EgoDex domain &mdash; and the OOD average rises from <span class="inline-result">34.7% &rarr; 38.5%</span>.</p>
       <div class="chart-container"><canvas id="chart-human-data"></canvas></div>
       <div style="margin-top: 32px;">
         <div class="tab-bar" data-tabgroup="ood-videos">
@@ -713,13 +748,14 @@
     <!-- Real-World — tabbed -->
     <div class="result-block">
       <h3 class="result-title">Human Data Drives Real-World Performance</h3>
-      <p class="result-desc">Deployed on IRON-R01-1.11 humanoid (50-DoF) with two tasks: Pick &amp; Place (analogous to EgoDex basic_pick_place) and Pouring (bimanual). Five OOD axes test geometry, distractor, target, background, and combinational generalization.</p>
+      <p class="result-desc">We next deploy VLA-UniT on the real-world <strong>IRON-R01-1.11</strong> humanoid (50-dimensional action space) to check whether the simulation gains carry over to physical execution. Two tasks are evaluated: <strong>Pick &amp; Place</strong> (analogous to EgoDex <code>basic_pick_place</code>) and <strong>Pouring</strong> (analogous to <code>pour</code>, requiring bimanual coordination).</p>
+      <p class="result-desc">Generalization is probed along five OOD axes &mdash; <em>Geometry</em>, <em>Distractor</em>, <em>Target</em>, <em>Background</em>, and <em>Combinational</em>. The first four are set up so that robot data provide only partial coverage, while human demonstrations introduce the complementary variation; the Combinational axis tests instruction-based disambiguation among multiple objects seen during training.</p>
       <div class="tab-bar" data-tabgroup="real">
         <button class="tab-btn active" data-tab="real-indomain">Human Data Boosts In-Domain Accuracy</button>
         <button class="tab-btn" data-tab="real-ood">Human Data Unlocks OOD Generalization</button>
       </div>
       <div class="tab-panel active" data-tabgroup="real" data-tab="real-indomain">
-        <p class="perf-tab-desc">VLA-UniT outperforms GR00T on both tasks with robot data alone. Human co-training further improves Pick &amp; Place to <span class="inline-result">78%</span> and Pouring to <span class="inline-result">75%</span>, benefiting from rich bimanual coordination patterns in human demonstrations.</p>
+        <p class="perf-tab-desc">With robot data alone, VLA-UniT already substantially outperforms the GR00T baseline on both tasks: Pick &amp; Place <span class="inline-result">70% vs. 30%</span>, Pouring <span class="inline-result">35% vs. 5%</span>. Adding EgoDex human co-training lifts them further to <span class="inline-result">78%</span> and <span class="inline-result">75%</span> &mdash; the gain is particularly pronounced on Pouring, where coordinated dual-arm control is rare in the limited robot set but abundant in human demonstrations.</p>
         <div class="chart-container"><canvas id="chart-real-indomain"></canvas></div>
         <div style="margin-top: 32px;">
           <div class="tab-bar" data-tabgroup="real-id-videos">
@@ -772,7 +808,7 @@
         </div>
       </div>
       <div class="tab-panel" data-tabgroup="real" data-tab="real-ood">
-        <p class="perf-tab-desc">Human co-training consistently improves all 5 OOD axes. Geometry (<span class="inline-result">23%&#x2192;63%</span>) and Distractor (<span class="inline-result">27%&#x2192;60%</span>) show the largest gains, confirming that human data fills the variation gap left by limited robot demonstrations.</p>
+        <p class="perf-tab-desc">Human co-training consistently improves all five OOD axes. Geometry (<span class="inline-result">23.3% &rarr; 63.3%</span>) and Distractor (<span class="inline-result">26.7% &rarr; 60.0%</span>) show the largest gains &mdash; exactly where human videos introduce novel object shapes and visual clutter absent from the limited robot set. The Combinational axis, which tests instruction-based disambiguation, also jumps from <span class="inline-result">10% &rarr; 70%</span>, suggesting that the broader interaction diversity from human co-training also strengthens compositional generalization.</p>
         <div class="chart-container"><canvas id="chart-real-ood"></canvas></div>
         <div style="margin-top: 32px;">
           <div class="tab-bar" data-tabgroup="real-ood-videos">
@@ -1033,7 +1069,7 @@
     <!-- Zero-Shot -->
     <div class="result-block">
       <h3 class="result-title">Human Data Enables Zero-Shot Task Transfer</h3>
-      <p class="narrative-text">We evaluate on a stacking task that is <strong>not covered by robot training demonstrations</strong>. Robot data only include pick-and-place of individual bowls, while EgoDex human videos contain stacking sequences performed with view switching and upper-body coordination.</p>
+      <p class="result-desc">We finally evaluate on a <strong>stacking task</strong> that is <em>not</em> covered by any robot training demonstration: the robot set only includes pick-and-place of individual bowls, while EgoDex human videos do contain stacking sequences performed with view switching and upper-body coordination. This isolates whether VLA-UniT can carry a new task over from human data alone.</p>
       <div class="chart-container"><canvas id="chart-zero-shot"></canvas></div>
 
       <div style="margin-top: 32px; display: flex; gap: 0; justify-content: center; align-items: flex-start; max-width: var(--max-w-wide);">
@@ -1072,14 +1108,16 @@
   <div class="container-wide">
     <div class="section-label">Downstream Paradigm II</div>
     <h2 class="section-title">World Modeling: From Controllability to Human-Humanoid Imagination</h2>
-    <p class="section-subtitle">WM-UniT conditions video generation on UniT's continuous pre-quantization features, providing a visually-grounded conditioning interface that replaces embodiment-specific raw actions. Evaluated via 10-step autoregressive rollouts over 10-second video generation.</p>
+    <p class="section-subtitle">Action-conditioned world models normally take in embodiment-specific raw actions &mdash; humanoid joints, wrist poses, and human hand trajectories each living in their own action vocabulary. <strong>WM-UniT</strong> replaces this interface with UniT's continuous pre-quantization features as a unified conditioning signal, built on the Cosmos Predict 2.5 action-conditioned video backbone and trained with flow matching.</p>
+    <p class="section-subtitle">We examine WM-UniT along two axes: <strong>controllable generation</strong> &mdash; on a single embodiment (DROID) and under human-humanoid co-training &mdash; and <strong>human-humanoid transfer</strong>, via both human pre-training and direct cross-embodiment conditioning.</p>
 
     <div class="topic-header" style="margin-top: 40px;">Controllability</div>
 
     <!-- DROID single-embodiment -->
     <div class="result-block">
       <h3 class="result-title">Single-Embodiment Controllability</h3>
-      <p class="result-desc">WM-UniT achieves the strongest controllability on DROID (best EPE) while improving PSNR, SSIM, and LPIPS. WM-Action does not yield a similarly reliable gain, indicating that latent tokenization alone is insufficient — visual anchoring is the key factor.</p>
+      <p class="result-desc">We start in the simplest setting: a single embodiment, <strong>DROID</strong>, where raw actions already share a consistent kinematic convention. The question is whether UniT conditioning still improves controllability here. We compare three interfaces under an identical Cosmos Predict 2.5 backbone &mdash; <strong>Raw Action</strong>, <strong>WM-Action</strong> (action-only latent tokenization), and <strong>WM-UniT</strong>.</p>
+      <p class="result-desc">WM-UniT wins on EPE &mdash; the most direct indicator of action controllability &mdash; while WM-Action does not yield a similarly reliable gain, indicating that <em>latent tokenization alone is insufficient without visual anchoring</em>.</p>
       <div class="chart-container" style="overflow-x: auto;">
         <table class="data-table">
           <thead><tr><th>Method</th><th>PSNR &#x2191;</th><th>SSIM &#x2191;</th><th>LPIPS &#x2193;</th><th>FVD &#x2193;</th><th>EPE &#x2193;</th></tr></thead>
@@ -1135,7 +1173,8 @@
     <!-- Human-Humanoid Co-Training -->
     <div class="result-block">
       <h3 class="result-title">Human-Humanoid Controllability</h3>
-      <p class="result-desc">Co-training on EgoDex and RoboCasa-GR1 consistently outperforms raw actions on both subsets, confirming that UniT provides a shared conditioning space for cross-embodiment dynamics modeling.</p>
+      <p class="result-desc">We next jointly train a single world model on <strong>EgoDex</strong> human demonstrations and <strong>RoboCasa-GR1</strong> humanoid demonstrations. The question is whether a unified conditioning interface still holds up when the training signal spans two heterogeneous embodiments in the same model.</p>
+      <p class="result-desc"><strong style="color:var(--blue)">WM-UniT</strong> consistently outperforms <strong>Raw Action</strong> on both subsets, with the clearest gain in controllability (EPE). Together with the aligned cross-embodiment context embeddings from our representation analysis, this indicates that UniT provides a <strong>shared conditioning space</strong> that lets the world model co-train on human and humanoid data without collapsing into embodiment-specific dynamics.</p>
       <div class="chart-container" style="overflow-x: auto;">
         <table class="data-table">
           <thead><tr><th>Dataset</th><th>Method</th><th>PSNR &#x2191;</th><th>SSIM &#x2191;</th><th>LPIPS &#x2193;</th><th>FVD &#x2193;</th><th>EPE &#x2193;</th></tr></thead>
@@ -1228,7 +1267,8 @@
     <!-- Human Pre-Training -->
     <div class="result-block">
       <h3 class="result-title">Human Pre-Training Improves Robot World Modeling</h3>
-      <p class="result-desc">Pre-training on EgoDex human demonstrations transfers physical dynamics to humanoid prediction. The dynamics learned from human data remain usable after transfer, rather than being tied to human-specific kinematics.</p>
+      <p class="result-desc">Co-training shows that a shared conditioning space exists; pre-training asks whether physical dynamics learned from human data can actually be <em>transferred</em> to humanoid prediction. We pre-train WM-UniT on EgoDex's 27,419 <code>basic_pick_place</code> human trajectories, then fine-tune on RoboCasa-GR1 pick-and-place data.</p>
+      <p class="result-desc">Human pre-training brings consistent gains across all metrics, with the most meaningful improvement reflected in controllability. The dynamics learned from human data remain usable after transfer to humanoid prediction, rather than being tied to human-specific kinematics &mdash; UniT provides a <strong>transferable dynamics interface</strong> for world modeling.</p>
       <div class="chart-container" style="overflow-x: auto;">
         <table class="data-table">
           <thead><tr><th>Configuration</th><th>PSNR &#x2191;</th><th>SSIM &#x2191;</th><th>LPIPS &#x2193;</th><th>FVD &#x2193;</th><th>EPE &#x2193;</th></tr></thead>
@@ -1284,7 +1324,9 @@
     <!-- Cross-Embodiment Conditioning Evaluation -->
     <div class="result-block">
       <h3 class="result-title">Human-Humanoid Conditioning Consistency</h3>
-      <p class="result-desc">We directly test whether UniT tokens from one embodiment can condition video generation for the other — without any domain-specific adaptation. Gemini-3-Pro scores semantic, temporal, and geometric consistency (1–5). UniT preserves fine-grained action semantics, magnitude sensitivity, and temporal coherence across embodiments.</p>
+      <p class="result-desc">Beyond co-training and pre-training, we directly test whether UniT tokens from one embodiment can condition video generation for <em>the other</em> &mdash; without any domain-specific adaptation.</p>
+      <p class="result-desc">The setup is straightforward. We condition the world model with the per-frame action sequence of a source demonstration, apply it on top of the target embodiment's start frame, and let the model autoregressively generate the full video. Both directions are evaluated &mdash; <strong>Human&rarr;Humanoid</strong> and <strong>Humanoid&rarr;Human</strong> &mdash; and we compare <strong style="color:var(--blue)">WM-UniT</strong> against <strong>Raw Action</strong> conditioning.</p>
+      <p class="result-desc">To quantify these generations, we use <strong>Gemini-3-Pro</strong> as an automated judge and score three dimensions on a 1&ndash;5 scale: <strong>Semantic</strong> consistency (whether the intended action is preserved), <strong>Temporal</strong> consistency (whether motion timing and sequencing match, including non-monotonic trajectories such as reach-then-retract), and <strong>Geometric</strong> consistency (whether spatial trajectories and pose details are faithful).</p>
       <div class="chart-container" style="overflow-x: auto;">
         <table class="data-table">
           <thead><tr><th>Direction</th><th>Method</th><th>Semantic &#x2191;</th><th>Temporal &#x2191;</th><th>Geometric &#x2191;</th><th>Overall &#x2191;</th></tr></thead>
@@ -1312,34 +1354,94 @@
             <button class="tab-btn" data-tab="wm-h2r-case4">Case 4</button>
           </div>
           <div class="tab-panel active" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case1">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/human2robot/pair_054_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Human Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/human2robot/pair_054_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Human&rarr;Humanoid<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="h2r-case1"><img src="movies/wm/start_frame/robot/pair_054_robot_start.png" alt="start frame h2r case 1"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Generated Humanoid &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/human2robot/pair_054_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/human2robot/pair_054_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case2">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/human2robot/pair_073_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Human Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/human2robot/pair_073_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Human&rarr;Humanoid<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="h2r-case2"><img src="movies/wm/start_frame/robot/pair_073_robot_start.png" alt="start frame h2r case 2"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Generated Humanoid &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/human2robot/pair_073_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/human2robot/pair_073_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case3">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/human2robot/pair_082_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Human Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/human2robot/pair_082_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Human&rarr;Humanoid<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="h2r-case3"><img src="movies/wm/start_frame/robot/pair_082_robot_start.png" alt="start frame h2r case 3"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Generated Humanoid &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/human2robot/pair_082_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/human2robot/pair_082_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-panel" data-tabgroup="wm-h2r-cases" data-tab="wm-h2r-case4">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/human2robot/pair_091_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Human Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/human2robot/pair_091_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Human&rarr;Humanoid<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="h2r-case4"><img src="movies/wm/start_frame/robot/pair_091_robot_start.png" alt="start frame h2r case 4"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Generated Humanoid &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/human2robot/pair_091_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/human2robot/pair_091_Gr1_x_EgodexWrist_human2robot.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -1353,34 +1455,94 @@
             <button class="tab-btn" data-tab="wm-r2h-case4">Case 4</button>
           </div>
           <div class="tab-panel active" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case1">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/robot2human/pair_093_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Robot Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/robot2human/pair_093_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Humanoid&rarr;Human<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="r2h-case1"><img src="movies/wm/start_frame/human/pair_093_human_start.png" alt="start frame r2h case 1"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Generated Human &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/robot2human/pair_093_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/robot2human/pair_093_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case2">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/robot2human/pair_098_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Robot Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/robot2human/pair_098_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Humanoid&rarr;Human<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="r2h-case2"><img src="movies/wm/start_frame/human/pair_098_human_start.png" alt="start frame r2h case 2"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Generated Human &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/robot2human/pair_098_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/robot2human/pair_098_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case3">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/robot2human/pair_108_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Robot Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/robot2human/pair_108_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Humanoid&rarr;Human<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="r2h-case3"><img src="movies/wm/start_frame/human/pair_108_human_start.png" alt="start frame r2h case 3"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Generated Human &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/robot2human/pair_108_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/robot2human/pair_108_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
           <div class="tab-panel" data-tabgroup="wm-r2h-cases" data-tab="wm-r2h-case4">
-            <div class="video-card wm-cotrain-wide-card">
-              <div class="video-card-inner">
-                <video data-src="movies/wm/exp3/robot2human/pair_121_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video>
-                <div class="video-speed-badge">5-Step Rollout</div>
+            <div class="crosscond-layout">
+              <div class="crosscond-zone crosscond-zone--robot">
+                <div class="crosscond-zone-label">Robot Demonstration</div>
+                <div class="crosscond-clip" data-part="ref"><video data-src="movies/wm/exp3/robot2human/pair_121_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Reference</div>
+              </div>
+              <div class="crosscond-arrow"><div class="crosscond-arrow-line"></div><div class="crosscond-arrow-label">Humanoid&rarr;Human<br>Action Cond.</div></div>
+              <div class="crosscond-zone crosscond-zone--start">
+                <div class="crosscond-zone-label">Start Frame</div>
+                <div class="crosscond-startframe" data-startframe-id="r2h-case4"><img src="movies/wm/start_frame/human/pair_121_human_start.png" alt="start frame r2h case 4"></div>
+                <div class="crosscond-method-label crosscond-method-label--baseline">Initial Frame</div>
+              </div>
+              <div class="crosscond-arrow crosscond-arrow--short"><div class="crosscond-arrow-line"></div></div>
+              <div class="crosscond-zone crosscond-zone--human">
+                <div class="crosscond-zone-label">Generated Human &middot; 5-Step Rollout</div>
+                <div class="crosscond-transfer-grid">
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen1"><video data-src="movies/wm/exp3/robot2human/pair_121_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--unit">WM-UniT</div></div>
+                  <div class="crosscond-transfer-item"><div class="crosscond-clip" data-part="gen2"><video data-src="movies/wm/exp3/robot2human/pair_121_Gr1_x_EgodexWrist_robot2human.mp4" muted loop playsinline></video></div><div class="crosscond-method-label crosscond-method-label--baseline">Raw Action</div></div>
+                </div>
               </div>
             </div>
           </div>
@@ -1395,7 +1557,8 @@
   <div class="container-wide">
     <div class="section-label">Analysis</div>
     <h2 class="section-title">Every Design Choice Matters</h2>
-    <p class="section-subtitle">We validate two key claims: (1) both vision and action are needed, and (2) the two modalities must be explicitly aligned through cross-reconstruction. Ablation under the human-humanoid co-training setup (EgoDex + RoboCasa pre-train, RoboCasa fine-tune).</p>
+    <p class="section-subtitle">UniT's design rests on two claims: (1) both vision and action are needed &mdash; action-only methods suffer cross-embodiment distribution misalignment without visual grounding, while vision-only methods entangle low-level appearance and miss fine-grained motor detail; and (2) the two modalities must be explicitly aligned through <strong>cross-reconstruction</strong>, rather than treated as disconnected vocabularies.</p>
+    <p class="section-subtitle">We validate both claims under the human-humanoid co-training setup (EgoDex + RoboCasa-GR1 pre-train, RoboCasa-GR1 fine-tune), where the tokenizer's ability to bridge embodiments is directly tested.</p>
 
     <div class="tab-bar" data-tabgroup="ablation" style="margin-top: 32px;">
       <button class="tab-btn active" data-tab="abl-ood">OOD Performance</button>
@@ -1403,15 +1566,15 @@
     </div>
 
     <div class="tab-panel active" data-tabgroup="ablation" data-tab="abl-ood">
-      <p class="perf-tab-desc">VLA-UniT (<span class="inline-result">49.9%</span> OOD) outperforms both single-modality variants. Removing cross-reconstruction drops to <span class="inline-result">30.3%</span> — the <span class="inline-result">19.6%</span> gap confirms explicit alignment is the key enabler.</p>
+      <p class="perf-tab-desc">VLA-UniT reaches an OOD average of <span class="inline-result">49.9%</span>, consistently outperforming both single-modality variants: VLA-Vision (<span class="inline-result">45.2%</span>) provides a transferable visual signal but misses fine-grained motor detail, while VLA-Action (<span class="inline-result">42.1%</span>) captures motor intent but struggles with the cross-embodiment distribution gap without visual grounding. Removing cross-reconstruction drops performance further to <span class="inline-result">30.3%</span> &mdash; <em>below</em> both single-modality variants despite using both inputs &mdash; indicating that multi-modal input alone does not guarantee alignment. Explicit cross-reconstruction closes that gap with a <span class="inline-result">+19.6%</span> lift.</p>
       <div class="chart-container"><canvas id="chart-ablation-ood"></canvas></div>
-      <div class="callout callout-blue"><strong>Cross-Reconstruction Is Essential.</strong> Removing cross-reconstruction drops OOD from 49.9% to 30.3% — below even single-modality variants — showing that multi-modal input alone does not guarantee alignment. The 19.6% gain confirms explicit cross-modal alignment is the key enabler for human-to-humanoid transfer.</div>
+      <div class="callout callout-blue"><strong>Cross-Reconstruction Is Essential.</strong> Having both modalities is not enough; only explicit cross-reconstruction turns them into a coherent shared vocabulary that bridges human and humanoid.</div>
     </div>
 
     <div class="tab-panel" data-tabgroup="ablation" data-tab="abl-indomain">
-      <p class="perf-tab-desc">VLA-UniT (<span class="inline-result">66.8%</span>) outperforms VLA-Villa (<span class="inline-result">63.1%</span>), confirming that bidirectional cross-reconstruction is more effective than unidirectional V2A alternatives.</p>
+      <p class="perf-tab-desc">On in-domain performance we further include <strong>VLA-Villa</strong>, which uses unidirectional vision-to-action (V2A) reconstruction instead of UniT's bidirectional cross-reconstruction. VLA-UniT (<span class="inline-result">66.8%</span>) consistently outperforms VLA-Villa (<span class="inline-result">63.1%</span>), confirming that <strong>bidirectional</strong> alignment is more effective than unidirectional alternatives for producing aligned cross-embodiment tokens.</p>
       <div class="chart-container"><canvas id="chart-ablation-indomain"></canvas></div>
-      <div class="callout callout-blue"><strong>Bidirectional Cross-Reconstruction.</strong> VLA-UniT (66.8%) outperforms VLA-Villa (63.1%), which uses unidirectional V2A reconstruction, confirming that bidirectional alignment is more effective.</div>
+      <div class="callout callout-blue"><strong>Bidirectional &gt; Unidirectional.</strong> Going both ways &mdash; vision predicts action <em>and</em> action predicts vision &mdash; is what produces tokens that actually transfer across embodiments.</div>
     </div>
   </div>
 </section>
@@ -1421,7 +1584,8 @@
   <div class="container-wide">
     <div class="section-label">Robustness</div>
     <h2 class="section-title">Noise Robustness: Visual Anchoring as a Denoiser</h2>
-    <p class="section-subtitle">In-the-wild human motion capture data inevitably contains noise from sensor jitter and annotation artifacts. Drag the slider to inject Gaussian noise into EgoDex action trajectories and watch how each tokenizer degrades.</p>
+    <p class="section-subtitle">In-the-wild human motion capture data inevitably contains noise from sensor jitter and annotation artifacts. We test whether UniT's cross-reconstruction &mdash; which grounds actions in visual transitions &mdash; provides implicit denoising by encoding and decoding perturbed action signals.</p>
+    <p class="section-subtitle">Gaussian noise of intensity &sigma; (normalized by the global action standard deviation) is injected into EgoDex action trajectories, and reconstruction quality is measured by MSE against the clean signal. We compare UniT against two action-only tokenizers: <strong>FAST</strong>, a frequency-based BPE action tokenizer, and <strong>Action Tokenizer</strong>, which uses the same RQ-VAE architecture as UniT but is trained on action data alone. Drag the slider to vary &sigma;.</p>
 
     <!-- Chart -->
     <div class="chart-container" style="margin-top: 32px;"><canvas id="chart-noise-degradation"></canvas></div>
@@ -1471,8 +1635,9 @@
   <div class="container">
     <div class="section-label">Looking Forward</div>
     <h2 class="section-title">Toward Scalable Embodied Intelligence</h2>
-    <p class="narrative-text">UniT demonstrates that a visual-anchored unified physical language can replace manual motion retargeting, serving both policy execution and world imagination within a single token interface.</p>
-    <p class="narrative-text">The visual branch encodes physical transitions from observations alone — without paired action annotations — opening a path toward absorbing the vast reservoir of <strong>internet-scale video</strong> where humans perform diverse tasks without motor labels. Furthermore, UniT's dual interface enables a closed-loop possibility: policies propose latent actions, world models simulate their visual consequences, and the resulting imagined rollouts can flow back as reward signals for reinforcement learning or enable test-time planning through search over the latent space.</p>
+    <p class="narrative-text">We presented <strong>UniT</strong> &mdash; a visual-anchored latent action tokenizer that establishes a unified physical language for human-to-humanoid transfer through cross-reconstruction.</p>
+    <p class="narrative-text">Looking forward, the visual branch of UniT encodes physical transitions from observations alone, without requiring paired action annotations. This opens a path toward absorbing the vast and largely untapped reservoir of <strong>internet-scale video</strong>, where humans perform diverse physical tasks without motor labels &mdash; an additional source of physical priors that enriches the shared latent space, readily scalable to heterogeneous human motion data without manual kinematic correspondence.</p>
+    <p class="narrative-text">Furthermore, UniT serving as a unified interface for both policy and world model suggests a deeper possibility: policies propose latent actions, world models simulate their visual consequences, and the imagined rollouts flow back as reward signals for reinforcement learning or enable test-time planning through search over the latent space &mdash; a closed-loop co-evolution mediated entirely within the shared token space, a compelling route toward scalable embodied intelligence.</p>
   </div>
 </section>
 
@@ -1528,6 +1693,8 @@ function initTabs() {
             if (v.dataset.src) { v.src = v.dataset.src; v.removeAttribute('data-src'); v.load(); }
             try { v.play(); } catch(e){}
           });
+          /* re-align any cross-conditioning layouts inside the newly activated panel */
+          if (window.__resetCrosscond) window.__resetCrosscond(target);
           setTimeout(() => {
             /* reposition any child tab-bar sliders that were hidden at init */
             target.querySelectorAll('.tab-bar').forEach(childBar => positionTabSlider(childBar));
@@ -2462,6 +2629,48 @@ window.addEventListener('scroll', () => {
   syncPair('wm-hero-human', 'wm-hero-robot');
 })();
 
+/* ── Cross-Conditioning video sync (ref + 2 transfers share one source) ── */
+(() => {
+  const SYNC_THRESHOLD = 0.15;
+  function registerLayout(layout) {
+    const vids = Array.from(layout.querySelectorAll('video'));
+    if (vids.length < 2) return;
+    const master = vids[0];
+    const slaves = vids.slice(1);
+    const resync = () => {
+      slaves.forEach(s => {
+        if (s.readyState >= 2 && Math.abs(s.currentTime - master.currentTime) > SYNC_THRESHOLD) {
+          try { s.currentTime = master.currentTime; } catch (e) {}
+        }
+      });
+    };
+    master.addEventListener('timeupdate', resync);
+    master.addEventListener('seeked', resync);
+    master.addEventListener('play', () => {
+      slaves.forEach(s => { try { s.currentTime = master.currentTime; } catch (e) {} s.play().catch(() => {}); });
+    });
+    master.addEventListener('pause', () => slaves.forEach(s => s.pause()));
+  }
+  document.querySelectorAll('.crosscond-layout').forEach(registerLayout);
+  /* Reset videos in a layout to t=0 and play together (call on panel activate / load) */
+  window.__resetCrosscond = (root) => {
+    (root || document).querySelectorAll('.crosscond-layout').forEach(layout => {
+      const vids = layout.querySelectorAll('video');
+      const start = () => {
+        vids.forEach(v => { try { v.currentTime = 0; } catch (e) {} });
+        vids.forEach(v => v.play().catch(() => {}));
+      };
+      const pending = Array.from(vids).filter(v => v.readyState < 2);
+      if (pending.length === 0) { start(); return; }
+      let remaining = pending.length;
+      pending.forEach(v => {
+        const h = () => { v.removeEventListener('loadeddata', h); if (--remaining === 0) start(); };
+        v.addEventListener('loadeddata', h);
+      });
+    });
+  };
+})();
+
 /* ── Lazy-load videos when section nears viewport ── */
 (() => {
   function loadVideos(container) {
@@ -2472,6 +2681,7 @@ window.addEventListener('scroll', () => {
       /* only auto-play if visible (active tab) */
       if (v.offsetParent !== null) v.play().catch(() => {});
     });
+    if (window.__resetCrosscond) window.__resetCrosscond(container);
   }
   const sections = document.querySelectorAll('section');
   const observer = new IntersectionObserver((entries) => {
