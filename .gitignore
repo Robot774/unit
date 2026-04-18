@@ -80,7 +80,7 @@ movies/real/ood/bowl-ood1(1).mov
 /zero_shot.png
 /method_comparison.png
 
-# ── Unused figs (only teaser.png referenced by index.html) ──
+# ── Unused figs (only teaser referenced by index.html) ──
 figs/*.png
-!figs/teaser.png
 figs/*.pdf
+!figs/teaser.jpeg
