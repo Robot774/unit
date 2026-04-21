@@ -2863,21 +2863,42 @@ window.addEventListener('scroll', () => {
   });
 });
 
-/* ── Hero video sync (VLA + WM pairs) ── */
+/* ── Hero video sync (VLA + WM pairs) ──
+   Strategy: the longer video drives the cycle. The shorter video plays to its
+   end and holds on its last frame until the longer one finishes; both then
+   restart together. This keeps the pair visually in sync without requiring
+   matched durations and without re-timing the content. */
 (() => {
+  function onMetadata(v) {
+    return new Promise(resolve => {
+      if (v.readyState >= 1 && isFinite(v.duration)) resolve();
+      else v.addEventListener('loadedmetadata', () => resolve(), { once: true });
+    });
+  }
   function syncPair(idA, idB) {
     const a = document.getElementById(idA);
     const b = document.getElementById(idB);
     if (!a || !b) return;
-    function drift() {
-      if (Math.abs(a.currentTime - b.currentTime) > 0.15) b.currentTime = a.currentTime;
-    }
-    a.addEventListener('seeked', drift);
-    a.addEventListener('play', () => { b.currentTime = a.currentTime; b.play(); });
-    a.addEventListener('pause', () => b.pause());
-    setInterval(drift, 500);
-    a.addEventListener('ended', () => { a.currentTime = 0; b.currentTime = 0; a.play(); b.play(); });
-    b.addEventListener('ended', () => { b.currentTime = 0; a.currentTime = 0; });
+    Promise.all([onMetadata(a), onMetadata(b)]).then(() => {
+      if (!isFinite(a.duration) || !isFinite(b.duration)) return;
+      const shorter = a.duration <= b.duration ? a : b;
+      const longer  = a.duration <= b.duration ? b : a;
+      // Take over looping so the short one can hold at its last frame.
+      a.loop = false;
+      b.loop = false;
+      shorter.addEventListener('ended', () => { shorter.pause(); });
+      longer.addEventListener('ended', () => {
+        shorter.currentTime = 0;
+        longer.currentTime  = 0;
+        shorter.play().catch(() => {});
+        longer.play().catch(() => {});
+      });
+      // Initial kick: ensure both are actually running from 0 together.
+      shorter.currentTime = 0;
+      longer.currentTime  = 0;
+      shorter.play().catch(() => {});
+      longer.play().catch(() => {});
+    });
   }
   syncPair('vla-hero-human', 'vla-hero-robot');
   syncPair('wm-hero-human', 'wm-hero-robot');
